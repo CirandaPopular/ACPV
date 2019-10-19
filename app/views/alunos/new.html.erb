@@ -1,0 +1,131 @@
+<h1>Inscrição de Aluno</h1>
+
+<%= form_with scope: :aluno, url: alunos_path, local: true do |formulario| %>
+  <% if @aluno.errors.any? %>
+    <div id="erro_inscricao_aluno">
+      <h2>
+        <%= pluralize(@aluno.errors.count, "erro") %> impediram a inscrição:
+      </h2>
+      <ul>
+        <% @aluno.errors.full_messages.each do |mensagem| %>
+          <li><%= mensagem %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= formulario.label value='Nome completo' %><br>
+    <%= formulario.text_field :nome %>
+  </p>
+
+  <p>
+    <%= formulario.label value='E-mail' %><br>
+    <%= formulario.email_field :email %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Idade' %><br>
+    <%= formulario.text_field :idade %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Telefone (WhatsApp)' %><br>
+    <%= formulario.text_field :telefone %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Rua' %><br>
+    <%= formulario.text_field :rua %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Bairro' %><br>
+    <%= formulario.text_field :bairro %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Cidade' %><br>
+    <%= formulario.text_field :cidade %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Cor ou raça' %><br>
+    <%= formulario.radio_button :cor, 'Negro' %>
+    <%= formulario.label :negro, 'Negro' %><br>
+    <%= formulario.radio_button :cor, 'Indígena' %>
+    <%= formulario.label :indigena, 'Indígena' %><br>
+    <%= formulario.radio_button :cor, 'Pardo' %>
+    <%= formulario.label :pardo, 'Pardo' %><br>
+    <%= formulario.radio_button :cor, 'Branco' %>
+    <%= formulario.label :branco, 'Branco' %><br>
+  </p>
+
+  <p>
+    <%= formulario.label value='Gênero' %><br>
+    <%= formulario.radio_button :genero, 'Masculino' %>
+    <%= formulario.label :masculino, 'Masculino' %><br>
+    <%= formulario.radio_button :genero, 'Feminino' %>
+    <%= formulario.label :feminino, 'Feminino' %><br>
+    <%= formulario.radio_button :genero, 'Outros' %>
+    <%= formulario.label :outros, 'Outros' %><br>
+  </p>
+
+  <p>
+    <%= formulario.label value='Nome do responsável' %><br>
+    <%= formulario.text_field :nome_responsavel %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Contato do responsável' %><br>
+    <%= formulario.text_field :contato_responsavel %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Escola (Onde estuda ou onde concluiu o Ensino Médio)' %><br>
+    <%= formulario.text_field :escola %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Tipo de escola' %><br>
+    <%= formulario.select :tipo_escola, %w(Pública Particular) %>
+  </p>
+
+  <p>
+    <%= formulario.label :grau_instrucao, value='Grau de instrução' %><br>
+    <%= formulario.radio_button :grau_instrucao, 'Estudante de Ensino Médio' %>
+    <%= formulario.label :ensino_medio_incompleto, 'Estudante de Ensino Médio' %><br>
+    <%= formulario.radio_button :grau_instrucao, 'Ensino Médio Completo' %>
+    <%= formulario.label :ensino_medio_completo, 'Ensino Médio Completo' %><br>
+    <%= formulario.radio_button :grau_instrucao, 'Estudante de Graduacao' %>
+    <%= formulario.label :ensino_superior_incompleto, 'Estudante de Graduacao' %><br>
+  </p>
+
+  <p>
+    <%= formulario.label :fez_enem, value='Já fez ENEM?' %><br>
+    <%= formulario.select :fez_enem, %w(Não Sim) %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Área' %><br>
+    <%= formulario.radio_button :area, 'Humanas' %>
+    <%= formulario.label :humanas, 'Humanas' %><br>
+    <%= formulario.radio_button :area, 'Exatas' %>
+    <%= formulario.label :exatas, 'Exatas' %><br>
+    <%= formulario.radio_button :area, 'Saúde' %>
+    <%= formulario.label :saude, 'Saúde' %><br>
+  </p>
+
+  <p>
+    <%= formulario.label value='Tem atuação em algum movimento social?' %><br>
+    <%= formulario.select :atuacao_mov_social, %w(Não Sim) %>
+  </p>
+
+  <p>
+    <%= formulario.submit value='Concluir Inscrição' %>
+  </p>
+
+  <p>
+    <%= link_to 'Voltar', ciranda_popular_inicio_path %>
+  </p>
+<% end %>
