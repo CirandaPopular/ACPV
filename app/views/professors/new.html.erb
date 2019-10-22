@@ -1,1 +1,95 @@
 <h1>Inscrição de Professor</h1>
+
+<%= form_with scope: :professor, url: professors_path, local: true do |formulario| %>
+  <p>
+    <%= formulario.label value='Nome completo' %><br>
+    <%= formulario.text_field :nome %>
+  </p>
+
+  <p>
+    <%= formulario.label value='E-mail' %><br>
+    <%= formulario.email_field :email %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Idade' %><br>
+    <%= formulario.text_field :idade %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Telefone (WhatsApp)' %><br>
+    <%= formulario.text_field :telefone %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Endereço' %><br>
+    <%= formulario.text_field :endereco %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Cidade' %><br>
+    <%= formulario.text_field :cidade %>
+  </p>
+
+  <p>
+    <%= formulario.label :grau_instrucao, value='Grau de instrução' %><br>
+    <%= formulario.radio_button :grau_instrucao, 'Estudante de Graduação' %>
+    <%= formulario.label :estudante_graduacao, 'Estudante de Graduação' %><br>
+    <%= formulario.radio_button :grau_instrucao, 'Graduação' %>
+    <%= formulario.label :graduacao, 'Graduação' %><br>
+    <%= formulario.radio_button :grau_instrucao, 'Pós-Graduação' %>
+    <%= formulario.label :pos_graduacao, 'Pós-Graduação' %><br>
+    <%= formulario.radio_button :grau_instrucao, 'Mestrado' %>
+    <%= formulario.label :mestrado, 'Mestrado' %><br>
+    <%= formulario.radio_button :grau_instrucao, 'Doutorado' %>
+    <%= formulario.label :doutorado, 'Doutorado' %><br>
+  </p>
+
+  <p>
+    <%= formulario.label value='Escolha a cidade onde você irá se voluntariar' %><br>
+    <%= formulario.select :tipo_escola, %w(Garanhuns Recife) %>
+  </p>
+
+  <p>
+    <%= formulario.label :fez_enem, value='Você tem disponibilidade em realizar esse trabalho de forma voluntária, no período noturno arcando com os custos de deslocamento e alimentação?' %><br>
+    <%= formulario.select :fez_enem, %w(Não Sim) %>
+  </p>
+
+  <p>
+    <%= formulario.label value='Qual é a sua área de atuação?' %><br>
+    <%= formulario.radio_button :area, 'Português' %>
+    <%= formulario.label :portugues, 'Português' %><br>
+    <%= formulario.radio_button :area, 'Matemática' %>
+    <%= formulario.label :matematica, 'Matemática' %><br>
+    <%= formulario.radio_button :area, 'Literatura' %>
+    <%= formulario.label :literatura, 'Literatura' %><br>
+    <%= formulario.radio_button :area, 'Redação' %>
+    <%= formulario.label :redacao, 'Redação' %><br>
+    <%= formulario.radio_button :area, 'História' %>
+    <%= formulario.label :historia, 'História' %><br>
+    <%= formulario.radio_button :area, 'Geografia' %>
+    <%= formulario.label :geografia, 'Geografia' %><br>
+    <%= formulario.radio_button :area, 'Inglês' %>
+    <%= formulario.label :ingles, 'Inglês' %><br>
+    <%= formulario.radio_button :area, 'Espanhol' %>
+    <%= formulario.label :espanhol, 'Espanhol' %><br>
+    <%= formulario.radio_button :area, 'Física' %>
+    <%= formulario.label :fisica, 'Física' %><br>
+    <%= formulario.radio_button :area, 'Biologia' %>
+    <%= formulario.label :biologia, 'Biologia' %><br>
+    <%= formulario.radio_button :area, 'Quimica' %>
+    <%= formulario.label :quimica, 'Quimica' %><br>
+    <%= formulario.radio_button :area, 'Filosofia' %>
+    <%= formulario.label :filosofia, 'Filosofia' %><br>
+    <%= formulario.radio_button :area, 'Sociologia' %>
+    <%= formulario.label :sociologia, 'Sociologia' %><br>
+  </p>
+
+  <p>
+    <%= formulario.submit value='Concluir Inscrição' %>
+  </p>
+
+  <p>
+    <%= link_to 'Voltar', ciranda_popular_inicio_path %>
+  </p>
+<% end %>
