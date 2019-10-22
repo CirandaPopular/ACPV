@@ -1,90 +1,105 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container">
+<table class="table table-striped">
 <h1>Dados da Inscrição</h1>
-
-<p>
+<tr>
+<td>
   <strong>Nome completo:</strong>
   <%= @aluno.nome %>
-</p>
+</td>
 
-<p>
+<td>
   <strong>E-mail:</strong>
   <%= @aluno.email %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>Idade:</strong>
   <%= @aluno.idade %>
-</p>
+</td>
 
-<p>
+<td>
   <strong>Telefone:</strong>
   <%= @aluno.telefone %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>Rua:</strong>
   <%= @aluno.rua %>
-</p>
+</td>
 
-<p>
+<td>
   <strong>Bairro:</strong>
   <%= @aluno.bairro %>
-</p>
+</td>
 
-<p>
+<td>
   <strong>Cidade:</strong>
   <%= @aluno.cidade %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>Cor ou raça:</strong>
   <%= @aluno.cor %>
-</p>
+</td>
 
-<p>
+<td>
   <strong>Gênero:</strong>
   <%= @aluno.genero %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>Nome do responsável:</strong>
   <%= @aluno.nome_responsavel %>
-</p>
+</td>
 
-<p>
+<td>
   <strong>Contato do responsável:</strong>
   <%= @aluno.contato_responsavel %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>Escola (Onde estuda ou onde concluiu o Ensino Médio):</strong>
   <%= @aluno.escola %>
-</p>
+</td>
 
-<p>
+<td>
   <strong>Tipo de escola:</strong>
   <%= @aluno.tipo_escola %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>Grau de instrução:</strong>
   <%= @aluno.grau_instrucao %>
-</p>
+</td>
 
-<p>
+<td>
   <strong>Já fez ENEM?</strong>
   <%= @aluno.fez_enem %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>Área:</strong>
   <%= @aluno.area %>
-</p>
+</td>
 
-<p>
-  <strong>Tem atuação em algum movimento social?</strong>
+<td>
+  <strong>Atuação em movimento social:</strong>
   <%= @aluno.atuacao_mov_social %>
-</p>
-
+</td>
+</tr>
 <p>
   <%= link_to 'Voltar', ciranda_popular_inicio_path %>
 </p>
+</table>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
