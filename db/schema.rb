@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_104654) do
+ActiveRecord::Schema.define(version: 2019_10_24_173059) do
 
   create_table "alunos", force: :cascade do |t|
     t.string "nome"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2019_10_24_104654) do
     t.string "email"
     t.integer "idade"
     t.string "telefone"
-    t.string "rua"
     t.string "cidade"
     t.string "grau_instrucao"
     t.string "cidade_voluntario"

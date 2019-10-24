@@ -15,9 +15,9 @@ one:
   escola: MyString
   tipo_escola: MyString
   grau_instrucao: MyString
-  fez_enem: false
+  fez_enem: MyString
   area: MyString
-  atuacao_mov_social: false
+  atuacao_mov_social: MyString
 
 two:
   nome: MyString
@@ -34,6 +34,6 @@ two:
   escola: MyString
   tipo_escola: MyString
   grau_instrucao: MyString
-  fez_enem: false
+  fez_enem: MyString
   area: MyString
-  atuacao_mov_social: false
+  atuacao_mov_social: MyString

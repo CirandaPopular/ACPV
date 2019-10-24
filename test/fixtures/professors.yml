@@ -5,8 +5,7 @@ one:
   email: MyString
   idade: 1
   telefone: MyString
-  rua: MyString
-  bairro: MyString
+  endereco: MyString
   cidade: MyString
   grau_instrucao: MyString
   cidade_voluntario: MyString
@@ -18,8 +17,7 @@ two:
   email: MyString
   idade: 1
   telefone: MyString
-  rua: MyString
-  bairro: MyString
+  endereco: MyString
   cidade: MyString
   grau_instrucao: MyString
   cidade_voluntario: MyString
