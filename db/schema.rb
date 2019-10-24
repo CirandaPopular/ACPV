@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_032536) do
+ActiveRecord::Schema.define(version: 2019_10_24_104654) do
 
   create_table "alunos", force: :cascade do |t|
     t.string "nome"
@@ -40,12 +40,17 @@ ActiveRecord::Schema.define(version: 2019_10_19_032536) do
     t.integer "idade"
     t.string "telefone"
     t.string "rua"
-    t.string "bairro"
     t.string "cidade"
     t.string "grau_instrucao"
     t.string "cidade_voluntario"
-    t.boolean "disponibilidade_voluntario"
+    t.string "disponibilidade_voluntario"
     t.string "area_atuacao"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "endereco"
+  end
+
+  create_table "turmas", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
