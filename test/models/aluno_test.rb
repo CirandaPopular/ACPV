@@ -17,9 +17,10 @@ class AlunoTest < ActiveSupport::TestCase
   end
 
   test 'apenas um aluno deve ser criado por vez' do
+    alunosIni = Aluno.all.length
     aluno = Aluno.new nome:'Ana Julia', email:'anajulia@hotmail.com', idade:19, telefone:'81995396483', rua:'Nome da Rua', bairro:'Nome do Bairro', cidade:'Recife', cor:'Branco', genero:'Feminino', nome_responsavel:'Nome do Responsavel', contato_responsavel:'98429312', escola:'Nome da Escola', tipo_escola:'Publica', grau_instrucao:'Estudante de Graduacao', fez_enem:'Sim', area:'Humanas', atuacao_mov_social:'Sim'
     assert aluno.save
-    alunos = Aluno.all
-    assert (alunos.length == 1)
+    alunosFim = Aluno.all.length
+    assert ((alunosFim - alunosIni) == 1)
   end
 end
