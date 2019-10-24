@@ -20,7 +20,7 @@
 
 <%= form_with scope: :aluno, url: alunos_path, local: true do |formulario| %>
   <% if @aluno.errors.any? %>
-    <div id="erro_inscricao_aluno">
+    <div id="erro_inscricao">
       <h2 style="color:red;">
         <%= pluralize(@aluno.errors.count, "erro") %> :
       </h2>
@@ -151,7 +151,7 @@
   </p>
 
   <p>
-    <%= formulario.submit value='Concluir Inscrição', id:"concluir_inscricao_aluno", class:'btn btn-success' %>
+    <%= formulario.submit value='Concluir Inscrição', id:"concluir_inscricao", class:'btn btn-success' %>
   </p>
 
   <p>

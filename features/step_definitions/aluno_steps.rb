@@ -46,7 +46,7 @@ When("Eu seleciono {string} no campo area e seleciono {string} no campo atuacao 
 end
 
 When("Eu clico no botao de concluir inscricao") do
-  click_button 'concluir_inscricao_aluno'
+  click_button 'concluir_inscricao'
 end
 
 Then("Eu vejo que a inscricao do aluno de nome {string} foi efetuada com sucesso") do |nome|
@@ -55,5 +55,5 @@ Then("Eu vejo que a inscricao do aluno de nome {string} foi efetuada com sucesso
 end
 
 Then("Eu vejo uma mensagem de erro indicando que a inscricao nao foi efetuada") do
-  assert_selector('div#erro_inscricao_aluno')
+  assert_selector('div#erro_inscricao')
 end

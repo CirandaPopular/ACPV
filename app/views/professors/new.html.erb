@@ -20,7 +20,7 @@
 
 <%= form_with scope: :professor, url: professors_path, local: true do |formulario| %>
     <% if @professor.errors.any? %>
-      <div id="erro_inscricao_professor">
+      <div id="erro_inscricao">
         <h2 style="color:red;">
           <%= pluralize(@professor.errors.count, "erro") %> impediram a inscrição:
         </h2>
@@ -66,60 +66,60 @@
   </div>
   <p>
     <%= formulario.label :grau_instrucao, value='Grau de instrução' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Estudante de Graduação' %>
-    <%= formulario.label :estudante_graduacao, 'Estudante de Graduação' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Graduação' %>
+    <%= formulario.radio_button :grau_instrucao, 'Estudante de Graduacao', id:"grau_Estudante" %>
+    <%= formulario.label :estudante_graduacao, 'Estudante de Graduação'%><br>
+    <%= formulario.radio_button :grau_instrucao, 'Graduacao', id:"grau_Graduacao" %>
     <%= formulario.label :graduacao, 'Graduação' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Pós-Graduação' %>
+    <%= formulario.radio_button :grau_instrucao, 'Pos Graduacao', id:"grau_Pos" %>
     <%= formulario.label :pos_graduacao, 'Pós-Graduação' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Mestrado' %>
+    <%= formulario.radio_button :grau_instrucao, 'Mestrado', id:"grau_Mestrado" %>
     <%= formulario.label :mestrado, 'Mestrado' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Doutorado' %>
+    <%= formulario.radio_button :grau_instrucao, 'Doutorado', id:"grau_Doutorado" %>
     <%= formulario.label :doutorado, 'Doutorado' %><br>
   </p>
 
   <p>
     <%= formulario.label value='Escolha a cidade onde você irá se voluntariar' %><br>
-    <%= formulario.select :cidade_voluntario, %w(Garanhuns Recife) %>
+    <%= formulario.select :cidade_voluntario, [%w(Garanhuns cidade_voluntario_Recife),%w(Recife cidade_voluntario_Garanhuns)],{},:id=>"cidade_voluntario" %>
   </p>
 
   <p>
     <%= formulario.label :voluntario, value='Você tem disponibilidade em realizar esse trabalho de forma voluntária, no período noturno arcando com os custos de deslocamento e alimentação?' %><br>
-    <%= formulario.select :disponibilidade_voluntario, %w(Não Sim) %>
+    <%= formulario.select :disponibilidade_voluntario, [%w(Sim disponibilidade_voluntario_Sim),%w(Não disponibilidade_voluntario_Não)],{},:id=>"disponibilidade_voluntario" %>
   </p>
 
   <p>
     <%= formulario.label value='Qual é a sua área de atuação?' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Português' %>
+    <%= formulario.radio_button :area_atuacao, 'Portugues', id:"atuacao_Portugues" %>
     <%= formulario.label :portugues, 'Português' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Matemática' %>
+    <%= formulario.radio_button :area_atuacao, 'Matematica', id:"atuacao_Matematica" %>
     <%= formulario.label :matematica, 'Matemática' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Literatura' %>
+    <%= formulario.radio_button :area_atuacao, 'Literatura', id:"atuacao_Literatura" %>
     <%= formulario.label :literatura, 'Literatura' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Redação' %>
+    <%= formulario.radio_button :area_atuacao, 'Redacao', id:"atuacao_Redacao" %>
     <%= formulario.label :redacao, 'Redação' %><br>
-    <%= formulario.radio_button :area_atuacao, 'História' %>
+    <%= formulario.radio_button :area_atuacao, 'Historia', id:"atuacao_Historia" %>
     <%= formulario.label :historia, 'História' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Geografia' %>
+    <%= formulario.radio_button :area_atuacao, 'Geografia', id:"atuacao_Geografia" %>
     <%= formulario.label :geografia, 'Geografia' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Inglês' %>
+    <%= formulario.radio_button :area_atuacao, 'Ingles', id:"atuacao_Ingles" %>
     <%= formulario.label :ingles, 'Inglês' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Espanhol' %>
+    <%= formulario.radio_button :area_atuacao, 'Espanhol', id:"atuacao_Espanhol" %>
     <%= formulario.label :espanhol, 'Espanhol' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Física' %>
+    <%= formulario.radio_button :area_atuacao, 'Fisica', id:"atuacao_Fisica" %>
     <%= formulario.label :fisica, 'Física' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Biologia' %>
+    <%= formulario.radio_button :area_atuacao, 'Biologia', id:"atuacao_Biologia" %>
     <%= formulario.label :biologia, 'Biologia' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Quimica' %>
+    <%= formulario.radio_button :area_atuacao, 'Quimica', id:"atuacao_Quimica" %>
     <%= formulario.label :quimica, 'Quimica' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Filosofia' %>
+    <%= formulario.radio_button :area_atuacao, 'Filosofia', id:"atuacao_Filosofia" %>
     <%= formulario.label :filosofia, 'Filosofia' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Sociologia' %>
+    <%= formulario.radio_button :area_atuacao, 'Sociologia', id:"atuacao_Sociologia" %>
     <%= formulario.label :sociologia, 'Sociologia' %><br>
   </p>
 
   <p>
-    <%= formulario.submit value='Concluir Inscrição', class:'btn btn-success' %>
+    <%= formulario.submit value='Concluir Inscrição', id:"concluir_inscricao", class:'btn btn-success' %>
   </p>
 
   <p>
