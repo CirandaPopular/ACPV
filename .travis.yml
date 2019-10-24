@@ -4,7 +4,7 @@ rvm:
 
 script:
   - bundle exec rake db:create:all
-  - bundle exec rake dv:migrate RAILV_ENV=test
+  - bundle exec rake db:migrate RAILV_ENV=test
   - ruby Itest test/models/aluno_test.rb
   - ruby Itest test/models/professor_test.rb
   - ruby -S bundle exec cucumber --profile default
