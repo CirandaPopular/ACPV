@@ -1,7 +1,31 @@
 require 'test_helper'
 
 class ProfessorTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'um professor com todas as informacoes corretas deve ser salvo' do
+    professor = Professor.new nome:'Mariana Costa', email:'marianac@gmail.com', idade:40, telefone:'87995396483', endereco:'Nome da Rua, Nome do Bairro', cidade:'Garanhuns', grau_instrucao:'Mestrado', cidade_voluntario:'Recife', disponibilidade_voluntario:'Sim', area_atuacao:'Portugues'
+    assert professor.save
+  end
+
+  test 'um professor sem informacao de disponibilidade para ser voluntario nao deve ser salvo' do
+    professor = Professor.new nome:'Joao Pedro', email:'joaopedro@hotmail.com', idade:56, telefone:'87999296483', endereco:'Nome da Rua, Nome do Bairro', cidade:'Recife', grau_instrucao:'Doutorado', cidade_voluntario:'Recife', disponibilidade_voluntario:nil, area_atuacao:'Fisica'
+    assert_not professor.save
+  end
+
+  test 'um professor sem area de atuacao nao deve ser salvo' do
+    professor = Professor.new nome:'Ana Maria', email:'ana.maria12@hotmail.com', idade:33, telefone:'81989296483', endereco:'Nome da Rua, Nome do Bairro', cidade:'Garanhuns', grau_instrucao:'Graduacao', cidade_voluntario:'Garanhuns', disponibilidade_voluntario:'Sim', area_atuacao:nil
+    assert_not professor.save
+  end
+
+  test 'um professor sem informacao de para qual cidade quer se viluntariar nao deve ser salvo' do
+    professor = Professor.new nome:'Juliana Ferreira', email:'julianaf@hotmail.com', idade:39, telefone:'81989296483', endereco:'Nome da Rua, Nome do Bairro', cidade:'Garanhuns', grau_instrucao:'Mestrado', cidade_voluntario:nil, disponibilidade_voluntario:'Sim', area_atuacao:'Geografia'
+    assert_not professor.save
+  end
+
+  test 'apenas um professor deve ser criado por vez' do
+    professoresIni = Professor.all.length
+    professor = Professor.new nome:'Jose Carlos', email:'jose_carlos@hotmail.com', idade:63, telefone:'81989296483', endereco:'Nome da Rua, Nome do Bairro', cidade:'Garanhuns', grau_instrucao:'Doutorado', cidade_voluntario:'Garanhuns', disponibilidade_voluntario:'Sim', area_atuacao:'Quimica'
+    assert professor.save
+    professoresFim = Professor.all.length
+    assert((professoresFim - professoresIni) == 1)
+  end
 end
