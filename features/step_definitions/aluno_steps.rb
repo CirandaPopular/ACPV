@@ -36,7 +36,7 @@ end
 
 When("Eu seleciono {string} no campo grau de instrucao e seleciono {string} no campo ja fez ENEM") do |grau_instrucao, enem|
   palavras_separadas = grau_instrucao.split(' ')
-  choose("grau_instrucao_" + palavras_separadas[palavras_separadas.length() - 1])
+  choose("grau_instrucao_" + palavras_separadas[palavras_separadas.length - 1])
   find("option[value=fez_enem_" + enem + "]").click
 end
 
