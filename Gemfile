@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
@@ -48,6 +49,11 @@ group :test do
   gem 'database_cleaner'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+group :production do
+  gem 'pg', '~> 1.1.2-x64-mingw32' # use PostgreSQL in production (Heroku)
+  gem 'rails_12factor' # Heroku-specific production settings
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
