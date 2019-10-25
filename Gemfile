@@ -52,7 +52,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '~> 1.1.4-x64-mingw32' # use PostgreSQL in production (Heroku)
+  gem 'pg', '~> 1.1.4.pre.x64.pre.mingw32' # use PostgreSQL in production (Heroku)
   gem 'rails_12factor' # Heroku-specific production settings
 end
 
