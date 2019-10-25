@@ -256,7 +256,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   jbuilder (~> 2.7)
-  pg (~> 1.1.2.pre.x64.pre.mingw32)
+  pg (~> 1.1.4.pre.x64.pre.mingw32)
   puma (~> 3.11)
   rails (~> 6.0.0)
   rails_12factor
