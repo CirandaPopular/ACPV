@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Ciranda Popular</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to 'Inscrição de Aluno', new_aluno_path, id:"inscricao_aluno", class:'nav-link' %>
+      </li>
+      <li class="nav-itemh">
+        <%= link_to 'Inscrição de Professor', new_professor_path, id:"inscricao_professor", class:'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <img src="https://scontent.fcau9-1.fna.fbcdn.net/v/t1.0-9/59863966_2555647221133034_4579143777075068928_n.jpg?_nc_cat=110&_nc_oc=AQm8Dq1FjNt4J5Hx-xM6-gUhA45wjiEFMXk8q3GAr8mO-wV_alDqlDD2suSVFCPn0EI&_nc_ht=scontent.fcau9-1.fna&oh=ce6dde09045c664f65ff5b7c944e847c&oe=5E5DA6F3" class="d-block w-100" alt="..."style="height:32rem;">
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fcau9-1.fna.fbcdn.net/v/t1.0-9/60252885_2555647244466365_4257129012079362048_n.jpg?_nc_cat=101&_nc_oc=AQmBlGAbMZuvgJuDNfer9_se0hxwuDprYDRc6Kc-bO-2hCfB7PsD4b_4qCC9UrUbzSI&_nc_ht=scontent.fcau9-1.fna&oh=345c38e693225d87d2fbf05383f39b85&oe=5E5CF611" class="d-block w-100" alt="..." style="height:32rem;">
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fcau9-1.fna.fbcdn.net/v/t1.0-9/59768628_2551580968206326_6682156496173662208_n.jpg?_nc_cat=100&_nc_oc=AQmX1AGpFKeBLMnww1lQchvWnsfzeNa6AJ-ukzd6mhuuLeD95EBqwr-ulSxUTI_g8Ws&_nc_ht=scontent.fcau9-1.fna&oh=0028ba40823e6f857ba8695450e2c1c1&oe=5E199A14" class="d-block w-100" alt="..." style="height:32rem;">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div style="font-size: 15px; text-align:center;" class="col-sm-6">
+    Curso Pré-Enem Ciranda Popular, uma realização da Frente Brasil Popular em parceria com a Universidade Federal Rural de Pernambuco (UFRPE) e a Rede de Cursinhos Populares Podemos Mais, do movimento Levante Popular da Juventude. O projeto tem como objetivo formar turmas de jovens interessados em entrar na universidade, com a preparação realizada por professores voluntários.
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<footer class="page-footer font-small pt-4" style="background-color:lightgrey">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase">Realização</h5>
+        <p>
+          <img src="http://3.bp.blogspot.com/-TQ0_PQbPupc/VBjo4rveuVI/AAAAAAAAmWY/KVDVAZvI05E/s282/Novo%2BBras%25C3%25A3o%2BUFRPE%2B-%2BFundo%2BTransparente%2Be%2Bnome%2Bpor%2Bextenso.png" width="80rem">
+          <img src="http://frentebrasil.cut.org.br/frontend/assets/images/logo.png" height="50rem">
+          <img src="http://frentebrasilpopular.org.br/system/images/bc8479d5b2b60bc21e3a0e0bfe824519center.png" width="70rem">
+          <img src="http://frentebrasilpopular.org.br/system/images/dfb42b3f174417a0e8ba0919347112cdcenter.png" height="65rem">
+          <img src="data:image/jpeg;base64,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" height="65rem">
+        </p>
+      </div>
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#">Link 1</a>
+          </li>
+          <li>
+            <a href="#">Link 2</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#">Link 1</a>
+          </li>
+          <li>
+            <a href="#">Link 2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright text-center py-3">© 2019 Copyright: Antônio Pedro e Maria Eduarda
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
