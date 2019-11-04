@@ -1,21 +1,3 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Ciranda Popular</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to 'Inscrição de Aluno', new_aluno_path, id:"inscricao_aluno", class:'nav-link' %>
-      </li>
-      <li class="nav-itemh">
-        <%= link_to 'Inscrição de Professor', new_professor_path, id:"inscricao_professor", class:'nav-link' %>
-      </li>
-    </ul>
-  </div>
-</nav>
-
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -30,15 +12,15 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://scontent.fcau9-1.fna.fbcdn.net/v/t1.0-9/60252885_2555647244466365_4257129012079362048_n.jpg?_nc_cat=101&_nc_oc=AQmBlGAbMZuvgJuDNfer9_se0hxwuDprYDRc6Kc-bO-2hCfB7PsD4b_4qCC9UrUbzSI&_nc_ht=scontent.fcau9-1.fna&oh=345c38e693225d87d2fbf05383f39b85&oe=5E5CF611" class="d-block w-100" alt="..." style="height:26rem;">
-      <div class="carousel-caption">
-        <p>Aula do Curso em Garanhuns</p>
-      </div>
-    </div>
-    <div class="carousel-item">
       <img src="https://scontent.fcau9-1.fna.fbcdn.net/v/t1.0-9/59768628_2551580968206326_6682156496173662208_n.jpg?_nc_cat=100&_nc_oc=AQmX1AGpFKeBLMnww1lQchvWnsfzeNa6AJ-ukzd6mhuuLeD95EBqwr-ulSxUTI_g8Ws&_nc_ht=scontent.fcau9-1.fna&oh=0028ba40823e6f857ba8695450e2c1c1&oe=5E199A14" class="d-block w-100" alt="..." style="height:26rem;">
       <div class="carousel-caption">
         <p>Inauguração do Curso em Recife</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fcau9-1.fna.fbcdn.net/v/t1.0-9/60252885_2555647244466365_4257129012079362048_n.jpg?_nc_cat=101&_nc_oc=AQmBlGAbMZuvgJuDNfer9_se0hxwuDprYDRc6Kc-bO-2hCfB7PsD4b_4qCC9UrUbzSI&_nc_ht=scontent.fcau9-1.fna&oh=345c38e693225d87d2fbf05383f39b85&oe=5E5CF611" class="d-block w-100" alt="..." style="height:26rem;">
+      <div class="carousel-caption">
+        <p>Aula do Curso em Garanhuns</p>
       </div>
     </div>
   </div>
@@ -54,14 +36,29 @@
 <br>
 <br>
 
-<div class="col-sm-9">
-  <h2>O que é o Curso Pré-Enem Ciranda Popular?</h2>
-  <hr>
-  <p align="justify">É um curso pré-vestibular realizado pela Frente Brasil Popular em parceria com a Universidade Federal Rural de Pernambuco (UFRPE) e a Rede de Cursinhos Populares Podemos Mais, do movimento Levante Popular da Juventude. O projeto tem como objetivo formar turmas de jovens interessados em entrar na universidade que poderão participar aulas gratuitas realizadas por professores voluntários.
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-7">
+      <h2>O que é o Curso Pré-Enem Ciranda Popular?</h2>
+      <hr>
+      <p align="justify">É um curso pré-vestibular realizado pela Frente Brasil Popular em parceria com a Universidade Federal Rural de Pernambuco (UFRPE) e a Rede de Cursinhos Populares Podemos Mais, do movimento Levante Popular da Juventude. O projeto tem como objetivo formar turmas de jovens interessados em entrar na universidade que poderão participar aulas gratuitas realizadas por professores voluntários.
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3" style="background-color:lavender;">
+      <ul class="list-unstyled">
+        <br><br>
+        <li>
+          <a href="#">Link 1</a>
+        </li>
+        <br>
+        <li>
+          <a href="#">Link 2</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
-<br>
-<br>
-<br>
 
 <footer class="page-footer font-small pt-4" style="background-color:lightgrey">
   <div class="container-fluid text-center text-md-left">
