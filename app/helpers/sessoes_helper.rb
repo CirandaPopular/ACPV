@@ -1,5 +1,5 @@
 module SessoesHelper
-  def login(usuario)
+  def login(*)
     session[:usuario_id] = @usuario.id
   end
   def usuario_atual
