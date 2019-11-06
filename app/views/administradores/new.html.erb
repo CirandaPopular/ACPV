@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Adicionar Administrador</h1>
+  <h1>Criar Novo Administrador</h1>
   <br>
   <%= form_with scope: :administrador, url: administradores_path, local: true do |formulario| %>
     <% if @administrador.errors.any? %>
@@ -38,10 +38,18 @@
     </div>
     <p>
       <%= formulario.label value='Em que cidade você administra o curso?' %><br>
-      <%= formulario.select :cidade_voluntario, [%w(Garanhuns cidade_voluntario_Recife),%w(Recife cidade_voluntario_Garanhuns)],{},:id=>"cidade_voluntario" %>
+      <%= formulario.select :cidade_voluntario, [%w(Garanhuns cidade_voluntario_Garanhuns),%w(Recife cidade_voluntario_Recife),%w(Ambas cidade_voluntario_Ambas)],{},:id=>"cidade_voluntario" %>
     </p>
     <p>
-      <%= formulario.submit value='Concluir Inscrição', id:"concluir_inscricao", class:'btn btn-success' %>
+      <%= formulario.label value='Senha' %><br>
+      <%= formulario.password_field :password, class:'form-control' %>
+    </p>
+    <p>
+      <%= formulario.label value='Confirme a Senha' %><br>
+      <%= formulario.password_field :password_confirmation, class:'form-control' %>
+    </p>
+    <p>
+      <%= formulario.submit value='Concluir', id:"criar_administrador", class:'btn btn-success' %>
     </p>
     <p>
       <%= link_to 'Voltar', ciranda_popular_inicio_path %>

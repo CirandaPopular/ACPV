@@ -1,9 +1,12 @@
 module SessoesHelper
   def login(*)
-    session[:usuario_id] = @usuario.id
+   session[:usuario_id] = @usuario.id
   end
   def usuario_atual
-    @usuario_atual ||= Usuario.find_by(id: session[:usuario_id])
+    @usuario_atual ||= Administrador.find_by(id: session[:usuario_id])
+    #if usuario_atual.nil?
+    #  @usuario_atual ||= Professor.find_by(id: session[:usuario_id])
+    #end
   end
   def bloquear_acesso
     if usuario_atual.present?
