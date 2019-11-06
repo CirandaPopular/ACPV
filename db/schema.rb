@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_015638) do
+ActiveRecord::Schema.define(version: 2019_11_04_061044) do
 
-# Could not dump table "alunos" because of following StandardError
-#   Unknown type 'turma' for column 'belongs_to'
+  create_table "administradores", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.string "telefone"
+    t.string "cidade_voluntario"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "alunos", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.integer "idade"
+    t.string "telefone"
+    t.string "rua"
+    t.string "bairro"
+    t.string "cidade"
+    t.string "cor"
+    t.string "genero"
+    t.string "nome_responsavel"
+    t.string "contato_responsavel"
+    t.string "escola"
+    t.string "tipo_escola"
+    t.string "grau_instrucao"
+    t.string "fez_enem"
+    t.string "area"
+    t.string "atuacao_mov_social"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "professors", force: :cascade do |t|
     t.string "nome"
@@ -30,17 +58,18 @@ ActiveRecord::Schema.define(version: 2019_10_25_015638) do
     t.string "endereco"
   end
 
-  create_table "professors_turmas", id: false, force: :cascade do |t|
-    t.integer "turma_id"
-    t.integer "professor_id"
-    t.index ["professor_id"], name: "index_professors_turmas_on_professor_id"
-    t.index ["turma_id"], name: "index_professors_turmas_on_turma_id"
-  end
-
   create_table "turmas", force: :cascade do |t|
-    t.string "nome"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_usuarios_on_email"
   end
 
 end
