@@ -11,12 +11,14 @@
           <li class="nav-item">
             <%= link_to 'Inscrição de Aluno', new_aluno_path, id:"inscricao_aluno", class:'nav-link' %>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to 'Inscrição de Professor', new_professor_path, id:"inscricao_professor", class:'nav-link' %>
           </li>
         </ul>
         <% if logado? %>
-          <li><%= link_to "Usuarios", usuarios_path %></li>
+          <li class="nav-item">
+            <%= link_to "Administradores", administradores_path, id:"administradores", class:'nav-link' %>
+          </li>
           <li>
             <ul>
               <li><%= link_to "Profile", usuario_atual %></li>

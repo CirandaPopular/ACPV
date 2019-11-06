@@ -1,0 +1,31 @@
+<h1>Administradores com acesso ao sistema</h1>
+<br>
+<table>
+  <thead>
+  <tr>
+    <th>Nome Completo</th>
+    <th>Email</th>
+    <th>Telefone</th>
+    <th>Cidade onde Administra o Curso</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @administradores.each do |administrador| %>
+    <tr>
+      <td>
+        <%= administrador.nome %>
+      </td>
+      <td>
+        <%= administrador.email %>
+      </td>
+      <td>
+        <%= administrador.telefone %>
+      </td>
+      <td>
+        <%= administrador.cidade_voluntario %>
+      </td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>
