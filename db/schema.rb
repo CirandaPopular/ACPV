@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_044940) do
+ActiveRecord::Schema.define(version: 2019_11_07_053426) do
 
   create_table "administradores", force: :cascade do |t|
     t.string "nome"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_044940) do
   end
 
 # Could not dump table "alunos" because of following StandardError
-#   Unknown type 'turma' for column 'belongs_to'
+#   Unknown type '' for column 'belongs_to'
 
   create_table "professors", force: :cascade do |t|
     t.string "nome"
@@ -54,4 +54,5 @@ ActiveRecord::Schema.define(version: 2019_11_07_044940) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "alunos", "turmas"
 end
