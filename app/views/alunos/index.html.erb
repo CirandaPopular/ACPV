@@ -1,0 +1,52 @@
+<h1>Todos os alunos inscritos</h1>
+<br>
+<table>
+  <thead>
+  <tr>
+    <th>Nome Completo</th>
+    <th>Email</th>
+    <th>Idade</th>
+    <th>Telefone</th>
+    <th>Cor</th>
+    <th>Gênero</th>
+    <th>Grau de Instrução</th>
+    <th>Área</th>
+    <th>Atuação em Movimento Social</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @alunos.each do |aluno| %>
+    <tr>
+      <td>
+        <%= aluno.nome %>
+      </td>
+      <td>
+        <%= aluno.email %>
+      </td>
+      <td>
+        <%= aluno.idade %>
+      </td>
+      <td>
+        <%= aluno.telefone %>
+      </td>
+      <td>
+        <%= aluno.cor %>
+      </td>
+      <td>
+        <%= aluno.genero %>
+      </td>
+      <td>
+        <%= aluno.grau_instrucao %>
+      </td>
+      <td>
+        <%= aluno.area %>
+      </td>
+      <td>
+        <%= aluno.atuacao_mov_social %>
+      </td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>

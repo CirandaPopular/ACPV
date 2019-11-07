@@ -1,0 +1,27 @@
+<h1>Professores</h1>
+<br>
+<table>
+  <thead>
+  <tr>
+    <th>Nome Completo</th>
+    <th>Email</th>
+    <th>Telefone</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @professores.each do |professor| %>
+    <tr>
+      <td>
+        <%= professor.nome %>
+      </td>
+      <td>
+        <%= professor.email %>
+      </td>
+      <td>
+        <%= professor.telefone %>
+      </td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>
