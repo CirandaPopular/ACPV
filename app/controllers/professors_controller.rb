@@ -13,6 +13,9 @@ class ProfessorsController < ApplicationController
       render 'new'
     end
   end
+  def index
+    @professores = Professor.all
+  end
   private
   def parametros_professor
     params.require(:professor).permit(:nome, :email, :idade, :telefone, :endereco, :cidade, :grau_instrucao, :cidade_voluntario, :disponibilidade_voluntario, :area_atuacao)

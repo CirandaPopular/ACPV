@@ -16,20 +16,23 @@
           </li>
         </ul>
         <% if logado? %>
-          <li class="nav-item">
-            <%= link_to "Administradores", administradores_path, id:"administradores", class:'nav-link' %>
-          </li>
           <li>
-            <ul>
-              <li><%= link_to "Profile", usuario_atual %></li>
-              <li><%= link_to "Settings", '#' %></li>
-              <li>
-                <%= link_to "Logout", logout_path%>
+            <ul  class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <%= link_to "Gerenciamento", menu_administrador_path, id:"administradores", class:'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Perfil", usuario_atual, id:"perfil", class:'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Logout", logout_path, id:"logout", class:'nav-link' %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Login", login_path %></li>
+          <li>
+            <%= link_to "Login", login_path, id:"login", class:'nav-link' %>
+          </li>
         <% end %>
       </div>
     </nav>
