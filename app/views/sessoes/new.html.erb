@@ -1,31 +1,33 @@
-<div class="container">
-  <h1>Fazer Login</h1>
-  <br>
-  <h6>* Apenas professores e administradores podem fazer login no sistema</h6>
-  <br>
-  <%= form_with scope: :sessao, url: login_path, local: true do |formulario| %>
-    <p>
-      <%= formulario.label value='E-mail' %><br>
-      <%= formulario.email_field :email, class:'form-control' %>
-    </p>
-    <p>
-      <%= formulario.label value='Senha' %><br>
-      <%= formulario.password_field :password, class:'form-control', autocomplete: "off" %>
-    </p>
-
-    <p>
-      <%= formulario.submit value='Login', id:"login", class:'btn btn-success' %>
-    </p>
-    <br>
-    <p>
-      <%= link_to 'Você é um novo administrador do curso? Clique aqui para se cadastrar.', new_administrador_path %>
-    </p>
-    <br>
-    <p>
-      <%= link_to 'Voltar', ciranda_popular_inicio_path %>
-    </p>
-  <% end %>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">LOGIN</span>
+          </h2>
+          <p class="mb-0">Apenas professores e administradores podem fazer login no sistema</p>
+          <%= form_with scope: :sessao, url: login_path, local: true do |formulario| %>
+            <br>
+            <p align="justify">
+              <%= formulario.label value='E-mail' %>
+              <%= formulario.email_field :email, class:'form-control' %>
+            </p>
+            <p align="justify">
+              <%= formulario.label value='Senha' %><br>
+              <%= formulario.password_field :password, class:'form-control', autocomplete: "off" %>
+            </p>
+            <br>
+            <p>
+              <%= formulario.submit value='Login', id:"login", class:'btn btn-primary btn-xl' %>
+            </p>
+            <br>
+            <p>
+              <%= link_to 'Você é um novo administrador do curso? Clique aqui para se cadastrar.', new_administrador_path %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

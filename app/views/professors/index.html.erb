@@ -1,12 +1,16 @@
-<h1>Professores</h1>
+<div  style="background-color: #ffffff; margin: 2rem;">
+<h2 style="margin: 2rem; padding-top:1rem; margin-bottom: -1rem;">Professores</h2>
 <br>
-<table>
+<table class="table table-striped">
   <thead>
   <tr>
     <th>Nome Completo</th>
     <th>Email</th>
     <th>Telefone</th>
-    <th></th>
+    <th>Área de Atuação</th>
+    <th>Grau de Instrução</th>
+    <th>Cidade Para a Qual se Voluntariou</th>
+    <th>Disponibilidade</th>
   </tr>
   </thead>
   <tbody>
@@ -21,7 +25,20 @@
       <td>
         <%= professor.telefone %>
       </td>
+      <td>
+        <%= professor.area_atuacao %>
+      </td>
+      <td>
+        <%= professor.grau_instrucao %>
+      </td>
+      <td>
+        <%= professor.cidade_voluntario %>
+      </td>
+      <td>
+        <%= professor.disponibilidade_voluntario %>
+      </td>
     </tr>
   <%end%>
   </tbody>
 </table>
+</div>
