@@ -1,115 +1,129 @@
-<div class="container">
-<h1>Inscrição de Professor</h1>
-
-<%= form_with scope: :professor, url: professors_path, local: true do |formulario| %>
-    <% if @professor.errors.any? %>
-      <div id="erro_inscricao">
-        <h2 style="color:red;">
-          <%= pluralize(@professor.errors.count, "erro") %> impediram a inscrição:
-        </h2>
-        <ul style="list-style-type: none;">
-          <% @professor.errors.full_messages.each do |mensagem| %>
-            <li class="alert alert-danger" role="alert"><%= mensagem %></li>
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Inscrição de Professor</span>
+          </h2>
+          <%= form_with scope: :professor, url: professors_path, local: true do |formulario| %>
+            <% if @professor.errors.any? %>
+              <div id="erro_inscricao">
+                <h2 style="color:red;">
+                  <%= pluralize(@professor.errors.count, "erro") %>:
+                </h2>
+                <ul style="list-style-type: none;">
+                  <% @professor.errors.full_messages.each do |mensagem| %>
+                    <li class="alert alert-danger" role="alert"><%= mensagem %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="row">
+              <div class="col-sm-8">
+                <p align="justify">
+                  <%= formulario.label value='Nome Completo' %><br>
+                  <%= formulario.text_field :nome, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p align="justify">
+                  <%= formulario.label value='Idade' %><br>
+                  <%= formulario.text_field :idade, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <div class = "row">
+              <div class="col-sm-8">
+                <p align="justify">
+                  <%= formulario.label value='E-mail' %><br>
+                  <%= formulario.email_field :email, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p align="justify">
+                  <%= formulario.label value='Telefone (WhatsApp)' %><br>
+                  <%= formulario.text_field :telefone, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <p align="justify">
+                  <%= formulario.label :endereco, value='Endereço' %><br>
+                  <%= formulario.text_field :endereco, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p align="justify">
+                  <%= formulario.label value='Cidade' %><br>
+                  <%= formulario.text_field :cidade, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-5">
+                <p align="justify">
+                  <%= formulario.label value='Qual é a sua área de atuação?' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Portugues', id:"atuacao_Portugues" %>
+                  <%= formulario.label :portugues, 'Português' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Matematica', id:"atuacao_Matematica" %>
+                  <%= formulario.label :matematica, 'Matemática' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Literatura', id:"atuacao_Literatura" %>
+                  <%= formulario.label :literatura, 'Literatura' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Redacao', id:"atuacao_Redacao" %>
+                  <%= formulario.label :redacao, 'Redação' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Historia', id:"atuacao_Historia" %>
+                  <%= formulario.label :historia, 'História' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Geografia', id:"atuacao_Geografia" %>
+                  <%= formulario.label :geografia, 'Geografia' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Ingles', id:"atuacao_Ingles" %>
+                  <%= formulario.label :ingles, 'Inglês' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Espanhol', id:"atuacao_Espanhol" %>
+                  <%= formulario.label :espanhol, 'Espanhol' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Fisica', id:"atuacao_Fisica" %>
+                  <%= formulario.label :fisica, 'Física' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Biologia', id:"atuacao_Biologia" %>
+                  <%= formulario.label :biologia, 'Biologia' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Quimica', id:"atuacao_Quimica" %>
+                  <%= formulario.label :quimica, 'Quimica' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Filosofia', id:"atuacao_Filosofia" %>
+                  <%= formulario.label :filosofia, 'Filosofia' %><br>
+                  <%= formulario.radio_button :area_atuacao, 'Sociologia', id:"atuacao_Sociologia" %>
+                  <%= formulario.label :sociologia, 'Sociologia' %><br>
+                </p>
+              </div>
+              <div class="col-sm-7">
+                <p align="justify">
+                  <%= formulario.label :grau_instrucao, value='Qual é o seu grau de instrução?' %><br>
+                  <%= formulario.radio_button :grau_instrucao, 'Estudante de Graduacao', id:"grau_Estudante" %>
+                  <%= formulario.label :estudante_graduacao, 'Estudante de Graduação'%><br>
+                  <%= formulario.radio_button :grau_instrucao, 'Graduacao', id:"grau_Graduacao" %>
+                  <%= formulario.label :graduacao, 'Graduação' %><br>
+                  <%= formulario.radio_button :grau_instrucao, 'Pos Graduacao', id:"grau_Pos" %>
+                  <%= formulario.label :pos_graduacao, 'Pós-Graduação' %><br>
+                  <%= formulario.radio_button :grau_instrucao, 'Mestrado', id:"grau_Mestrado" %>
+                  <%= formulario.label :mestrado, 'Mestrado' %><br>
+                  <%= formulario.radio_button :grau_instrucao, 'Doutorado', id:"grau_Doutorado" %>
+                  <%= formulario.label :doutorado, 'Doutorado' %><br>
+                </p>
+                <br>
+                <p align="justify">
+                  <%= formulario.label value='Para qual cidade você deseja se voluntariar?' %><br>
+                  <%= formulario.select :cidade_voluntario, [%w(Recife cidade_voluntario_Recife),%w(Garanhuns cidade_voluntario_Garanhuns)],{},:id=>"cidade_voluntario" %>
+                </p>
+                <br>
+                <p align="justify">
+                  <%= formulario.label :voluntario, value='Você tem disponibilidade em realizar esse trabalho de forma voluntária, no período noturno arcando com os custos de deslocamento e alimentação?' %><br>
+                  <%= formulario.select :disponibilidade_voluntario, [%w(Sim disponibilidade_voluntario_Sim),%w(Não disponibilidade_voluntario_Não)],{},:id=>"disponibilidade_voluntario" %>
+                </p>
+              </div>
+            </div>
+            <br>
+            <%= formulario.submit value='Concluir Inscrição', id:"concluir_inscricao", class:'btn btn-primary btn-xl' %>
           <% end %>
-        </ul>
+        </div>
       </div>
-    <% end %>
-
-  <p>
-    <%= formulario.label value='Nome completo' %><br>
-    <%= formulario.text_field :nome, class:'form-control' %>
-  </p>
-
-  <div class="row">
-  <div class="col-sm-7"><p>
-    <%= formulario.label value='E-mail' %><br>
-    <%= formulario.email_field :email, class:'form-control' %>
-  </p></div>
-
-  <div class="col-sm-2"><p>
-    <%= formulario.label value='Idade' %><br>
-    <%= formulario.text_field :idade, class:'form-control' %>
-  </p></div>
-
-  <div class="col-sm-3"><p>
-    <%= formulario.label value='Telefone (WhatsApp)' %><br>
-    <%= formulario.text_field :telefone, class:'form-control' %>
-  </p></div>
+    </div>
   </div>
-  <div class="row">
-  <div class="col-sm-8"><p>
-    <%= formulario.label :endereco, value='Endereço' %><br>
-    <%= formulario.text_field :endereco, class:'form-control' %>
-  </p></div>
-
-  <div class="col-sm-4"><p>
-    <%= formulario.label value='Cidade' %><br>
-    <%= formulario.text_field :cidade, class:'form-control' %>
-  </p></div>
-  </div>
-  <p>
-    <%= formulario.label :grau_instrucao, value='Grau de instrução' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Estudante de Graduacao', id:"grau_Estudante" %>
-    <%= formulario.label :estudante_graduacao, 'Estudante de Graduação'%><br>
-    <%= formulario.radio_button :grau_instrucao, 'Graduacao', id:"grau_Graduacao" %>
-    <%= formulario.label :graduacao, 'Graduação' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Pos Graduacao', id:"grau_Pos" %>
-    <%= formulario.label :pos_graduacao, 'Pós-Graduação' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Mestrado', id:"grau_Mestrado" %>
-    <%= formulario.label :mestrado, 'Mestrado' %><br>
-    <%= formulario.radio_button :grau_instrucao, 'Doutorado', id:"grau_Doutorado" %>
-    <%= formulario.label :doutorado, 'Doutorado' %><br>
-  </p>
-
-  <p>
-    <%= formulario.label value='Escolha a cidade onde você irá se voluntariar' %><br>
-    <%= formulario.select :cidade_voluntario, [%w(Recife cidade_voluntario_Recife),%w(Garanhuns cidade_voluntario_Garanhuns)],{},:id=>"cidade_voluntario" %>
-  </p>
-
-  <p>
-    <%= formulario.label :voluntario, value='Você tem disponibilidade em realizar esse trabalho de forma voluntária, no período noturno arcando com os custos de deslocamento e alimentação?' %><br>
-    <%= formulario.select :disponibilidade_voluntario, [%w(Sim disponibilidade_voluntario_Sim),%w(Não disponibilidade_voluntario_Não)],{},:id=>"disponibilidade_voluntario" %>
-  </p>
-
-  <p>
-    <%= formulario.label value='Qual é a sua área de atuação?' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Portugues', id:"atuacao_Portugues" %>
-    <%= formulario.label :portugues, 'Português' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Matematica', id:"atuacao_Matematica" %>
-    <%= formulario.label :matematica, 'Matemática' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Literatura', id:"atuacao_Literatura" %>
-    <%= formulario.label :literatura, 'Literatura' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Redacao', id:"atuacao_Redacao" %>
-    <%= formulario.label :redacao, 'Redação' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Historia', id:"atuacao_Historia" %>
-    <%= formulario.label :historia, 'História' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Geografia', id:"atuacao_Geografia" %>
-    <%= formulario.label :geografia, 'Geografia' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Ingles', id:"atuacao_Ingles" %>
-    <%= formulario.label :ingles, 'Inglês' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Espanhol', id:"atuacao_Espanhol" %>
-    <%= formulario.label :espanhol, 'Espanhol' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Fisica', id:"atuacao_Fisica" %>
-    <%= formulario.label :fisica, 'Física' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Biologia', id:"atuacao_Biologia" %>
-    <%= formulario.label :biologia, 'Biologia' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Quimica', id:"atuacao_Quimica" %>
-    <%= formulario.label :quimica, 'Quimica' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Filosofia', id:"atuacao_Filosofia" %>
-    <%= formulario.label :filosofia, 'Filosofia' %><br>
-    <%= formulario.radio_button :area_atuacao, 'Sociologia', id:"atuacao_Sociologia" %>
-    <%= formulario.label :sociologia, 'Sociologia' %><br>
-  </p>
-
-  <p>
-    <%= formulario.submit value='Concluir Inscrição', id:"concluir_inscricao", class:'btn btn-success' %>
-  </p>
-
-  <p>
-    <%= link_to 'Voltar', ciranda_popular_inicio_path %>
-  </p>
-<% end %>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</section>
