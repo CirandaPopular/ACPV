@@ -1,40 +1,71 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<header>
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="../">Ciranda Popular</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <%= link_to 'Inscrição de Aluno', new_aluno_path, id:"inscricao_aluno", class:'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Inscrição de Professor', new_professor_path, id:"inscricao_professor", class:'nav-link' %>
-          </li>
-        </ul>
+<style type="text/css">
+  body {
+  @include body-font;
+    background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Business Casual - Start Bootstrap Theme</title>
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+</head>
+
+<body>
+
+<h1 class="site-heading text-center text-white d-none d-lg-block">
+  <span class="site-heading-lower">Ciranda Popular</span>
+</h1>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="margin-top: -4rem;">
+  <div class="container">
+    <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href=<%= root_path %>>Logo
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href=<%= new_aluno_path %>>Inscrição de Aluno</a>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="<%= new_professor_path %>">Inscrição de Professor</a>
+        </li>
         <% if logado? %>
-          <li>
-            <ul  class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <%= link_to "Gerenciamento", menu_administrador_path, id:"administradores", class:'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Perfil", usuario_atual, id:"perfil", class:'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Logout", logout_path, id:"logout", class:'nav-link' %>
-              </li>
-            </ul>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="<%= menu_administrador_path %>">Gerenciamento</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="<%= usuario_atual %>">Perfil</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="<%= logout_path %>">Logout</a>
           </li>
         <% else %>
-          <li>
-            <%= link_to "Login", login_path, id:"login", class:'nav-link' %>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="<%= login_path %>">Login</a>
           </li>
         <% end %>
-      </div>
-    </nav>
+      </ul>
+    </div>
   </div>
-</header>
+</nav>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
