@@ -10,32 +10,30 @@
           <div class="row">
             <div class="col-sm-6">
               <p align="center">
-                <button class="btn btn-primary btn-xl">
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
                   <%= link_to 'Lista de Administradores', administradores_path, style:"color:white" %>
                 </button>
                 <br><br>
-                <button class="btn btn-primary btn-xl">
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
                   <%= link_to 'Lista de Professores', professors_path, style:"color:white" %>
                 </button>
                 <br><br>
-                <button class="btn btn-primary btn-xl">
-                  <%= link_to 'Meu Perfil', administradores_path + '/' + usuario_atual.id.to_s, style:"color:white" %>
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Lista de Alunos', alunos_path, style:"color:white" %>
                 </button>
               </p>
             </div>
             <div class="col-sm-6">
               <p align="center">
-                <button class="btn btn-primary btn-xl">
-                  <%= link_to 'Lista de Alunos', alunos_path, style:"color:white" %>
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Meu Perfil', administradores_path + '/' + usuario_atual.id.to_s, style:"color:white" %>
                 </button>
-              </p>
-              <p align="center">
-                <button class="btn btn-primary btn-xl">
+                <br><br>
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
                   <%= link_to 'Cadastrar Novo Administrador', new_administrador_path, style:"color:white" %>
                 </button>
-              </p>
-              <p align="center">
-                <button class="btn btn-primary btn-xl">
+                <br><br>
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
                   <%= link_to 'Seleção de Professores', selecao_professor_path, style:"color:white" %>
                 </button>
               </p>
