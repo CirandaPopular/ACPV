@@ -24,7 +24,7 @@
 
 <body>
   <h1 class="site-heading text-center text-white d-none d-lg-block">
-    <span class="site-heading-lower">Ciranda Popular</span>
+    <span class="site-heading-lower"><img src='../assets/logo.png' height="100rem" width="100rem"> Ciranda Popular</span>
   </h1>
 
 <!-- Navigation -->
@@ -37,9 +37,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href=<%= root_path %>>Logo
-            <span class="sr-only">(current)</span>
-          </a>
+          <a class="nav-link text-uppercase text-expanded" href=<%= root_path %>>Inicio<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href=<%= new_aluno_path %>>Inscrição de Aluno</a>
@@ -48,15 +46,20 @@
           <a class="nav-link text-uppercase text-expanded" href="<%= new_professor_path %>">Inscrição de Professor</a>
         </li>
         <% if logado? %>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="<%= menu_administrador_path %>">Gerenciamento</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="<%= usuario_atual %>">Perfil</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="<%= logout_path %>">Logout</a>
-          </li>
+          <% if !eh_admin? %>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="<%= menu_professor_path %>">Menu</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="<%= logout_path %>">Logout</a>
+          <% else %>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="<%= menu_administrador_path %>">Gerenciamento</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="<%= logout_path %>">Logout</a>
+            </li>
+          <% end %>
         <% else %>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="<%= login_path %>">Login</a>

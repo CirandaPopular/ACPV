@@ -1,0 +1,34 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Menu de Opções - Professor</span>
+          </h2>
+          <br>
+          <div class="row">
+            <div class="col-sm-6">
+              <p align="center">
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Adicionar Apostila', root_path, style:"color:white" %>
+                </button>
+                <br><br>
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Minhas Turmas', root_path, style:"color:white" %>
+                </button>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <p align="center">
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Meu Perfil', professors_path + '/' + usuario_atual.id.to_s, style:"color:white" %>
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

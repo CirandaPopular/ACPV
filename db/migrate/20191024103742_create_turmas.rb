@@ -8,6 +8,5 @@ class CreateTurmas < ActiveRecord::Migration[6.0]
       t.belongs_to :turma
       t.belongs_to :professor
     end
-    add_column :alunos, :belongs_to, :turma
   end
 end
