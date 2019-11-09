@@ -1,30 +1,48 @@
-<br>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5">
-      <button class="btn btn-success">
-        <%= link_to 'Lista de Administradores', administradores_path %>
-      </button>
-      <br><br>
-      <button class="btn btn-success">
-        <%= link_to 'Lista de Professores', professors_path %>
-      </button>
-    </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5">
-      <button class="btn btn-warning">
-        <%= link_to 'Lista de Alunos', alunos_path %>
-      </button>
-      <br><br>
-      <button class="btn btn-warning">
-        <%= link_to 'Cadastrar Novo Administrador', new_administrador_path %>
-      </button>
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Menu de Gerenciamento</span>
+          </h2>
+          <br>
+          <div class="row">
+            <div class="col-sm-6">
+              <p align="center">
+                <button class="btn btn-primary btn-xl">
+                  <%= link_to 'Lista de Administradores', administradores_path, style:"color:white" %>
+                </button>
+                <br><br>
+                <button class="btn btn-primary btn-xl">
+                  <%= link_to 'Lista de Professores', professors_path, style:"color:white" %>
+                </button>
+                <br><br>
+                <button class="btn btn-primary btn-xl">
+                  <%= link_to 'Meu Perfil', administradores_path + '/' + usuario_atual.id.to_s, style:"color:white" %>
+                </button>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <p align="center">
+                <button class="btn btn-primary btn-xl">
+                  <%= link_to 'Lista de Alunos', alunos_path, style:"color:white" %>
+                </button>
+              </p>
+              <p align="center">
+                <button class="btn btn-primary btn-xl">
+                  <%= link_to 'Cadastrar Novo Administrador', new_administrador_path, style:"color:white" %>
+                </button>
+              </p>
+              <p align="center">
+                <button class="btn btn-primary btn-xl">
+                  <%= link_to 'Seleção de Professores', selecao_professor_path, style:"color:white" %>
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<br>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</section>

@@ -1,0 +1,77 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-15 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Seleção de Professores</span>
+          </h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+                <th>Telefone</th>
+                <th>Área de Atuação</th>
+                <th>Grau de Instrução</th>
+                <th>Endereço</th>
+                <th>Cidade Aulas</th>
+                <th>Disponibilidade</th>
+                <th>Status da Inscrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @professores.each do |professor|
+                   @professor = Professor.find(professor.id)
+                   if(@professor.inscricao_aprovada != true)
+              %>
+              <tr>
+                <td>
+                  <%= @professor.nome %>
+                </td>
+                <td>
+                  <%= @professor.email %>
+                </td>
+                <td>
+                  <%= @professor.idade %>
+                </td>
+                <td>
+                  <%= @professor.telefone %>
+                </td>
+                <td>
+                  <%= @professor.area_atuacao %>
+                </td>
+                <td>
+                  <%= @professor.grau_instrucao %>
+                </td>
+                <td>
+                  <%= @professor.endereco %>, <%= @professor.cidade %>
+                </td>
+                <td>
+                  <%= @professor.cidade_voluntario %>
+                </td>
+                <td>
+                  <%= @professor.disponibilidade_voluntario %>
+                </td>
+                <td>
+                  <%= if @professor.inscricao_aprovada
+                        "Aprovada"
+                      else
+                        "Aprovação Pendente"
+                      end
+                  %>
+                </td>
+                <td>
+                  <%= link_to "aprovar", aprovar_inscricao_path(@professor.id) %>
+                </td>
+              </tr>
+              <% end
+                end%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

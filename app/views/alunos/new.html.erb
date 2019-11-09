@@ -7,7 +7,6 @@
             <span class="section-heading-lower">Inscrição de Aluno</span>
           </h2>
           <%= form_with scope: :aluno, url: alunos_path, local: true do |formulario| %>
-            <br>
             <% if @aluno.errors.any? %>
               <div id="erro_inscricao">
                 <h2 style="color:red;">
