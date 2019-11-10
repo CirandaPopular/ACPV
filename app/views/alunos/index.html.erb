@@ -44,11 +44,14 @@
                   <td>
                     <%= aluno.grau_instrucao %>
                   </td>
-                <td>
-                  <%= aluno.area %>
-                </td>
+                  <td>
+                    <%= aluno.area %>
+                  </td>
                   <td>
                     <%= aluno.atuacao_mov_social %>
+                  </td>
+                  <td>
+                    <%= link_to 'Editar Informações de Aluno', edit_aluno_path(aluno) %>
                   </td>
                 </tr>
               <%end%>

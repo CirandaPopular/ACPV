@@ -1,9 +1,13 @@
 class AlunosController < ApplicationController
+  before_action :autorizar_administrador, except: [:new, :create]
   def show
     @aluno = Aluno.find(params[:id])
   end
   def new
     @aluno = Aluno.new
+  end
+  def edit
+    @aluno = Aluno.find(params[:id])
   end
   def create
     @aluno = Aluno.new(parametros_aluno)
@@ -11,6 +15,14 @@ class AlunosController < ApplicationController
       redirect_to @aluno
     else
       render 'new'
+    end
+  end
+  def update
+    @aluno = Aluno.find(params[:id])
+    if @aluno.update!(parametros_aluno)
+      redirect_to @aluno
+    else
+      render 'edit'
     end
   end
   def index

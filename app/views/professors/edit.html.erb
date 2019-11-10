@@ -6,7 +6,7 @@
           <h2 class="section-heading mb-4">
             <span class="section-heading-lower">Inscrição de Professor</span>
           </h2>
-          <%= form_with scope: :professor, url: professors_path, local: true do |formulario| %>
+          <%= form_with scope: :professor, url: professor_path, method: :patch, local: true do |formulario| %>
             <% if @professor.errors.any? %>1
               <div id="erro_inscricao">
                 <h2 style="color:red;">

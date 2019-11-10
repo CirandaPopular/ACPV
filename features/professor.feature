@@ -3,6 +3,11 @@ Feature: Inscricao de Professor
   I want to realizar a inscricao para ministrar aulas do curso atraves do sistema
   So that eu nao precise fazer isso manualmente
 
+Feature: Login
+  As a professor
+  I want to fazer login no sistema
+  So that eu possa ter acesso a mais funcionalidades do sistema
+
   Scenario: Fazer a inscricao de um professor corretamente
     Given Eu estou na pagina de inscricao de professores
     When Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"

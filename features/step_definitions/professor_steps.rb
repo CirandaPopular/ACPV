@@ -41,3 +41,28 @@ Then("Eu vejo que a inscricao do professor de nome {string} foi efetuada com suc
   expect(page).to have_content(nome)
   expect(page).to have_current_path(professors_path + '/' + Professor.last.id.to_s)
 end
+
+Given("Eu estou na pagina de login") do
+  visit 'login'
+  expect(page).to have_content('Login')
+end
+
+When("Eu preencho o campo e-mail com {string}") do |email|
+  fill_in 'sessao[email]', :with => email
+end
+
+And("Eu preencho o campo senha com {string}") do |senha|
+  fill_in 'sessao[password]', :with => senha
+end
+
+And("Eu clico no botao de fazer login") do
+  click_button 'login'
+end
+
+Then("Eu vejo o menu de professores") do
+  expect(page).to have_current_path(menu_professor_path)
+end
+
+Then("Eu vejo uma mensagem de erro indicando que o login nao foi efetuado") do
+  assert_selector('div#erro_login')
+end
