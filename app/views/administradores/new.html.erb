@@ -41,9 +41,8 @@
                 </p>
               </div>
               <div class="col-sm-6">
-                <p>
-                  <%= formulario.label value='Em que cidade você administra o curso?' %><br>
-                  <%= formulario.select :cidade_voluntario, [%w(Garanhuns cidade_voluntario_Garanhuns),%w(Recife cidade_voluntario_Recife),%w(Ambas cidade_voluntario_Ambas)],{},:id=>"cidade_voluntario" %>
+                <p align="justify">
+                   <%= formulario.select :cidade_voluntario, [%w(Garanhuns cidade_admin_Garanhuns),%w(Recife cidade_admin_Recife),%w(Ambas cidade_admin_Ambas)],{},:id=>"cidade_admin" %>
                 </p>
               </div>
             </div>

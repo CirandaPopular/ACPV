@@ -1,0 +1,77 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Adicionar Novo Administrador</span>
+          </h2>
+          <%= form_with scope: :administrador, url: administrador_path, method: :patch, local: true do |formulario| %>
+            <% if @administrador.errors.any? %>
+              <div id="erro_inscricao">
+                <h2 style="color:red;">
+                  <%= pluralize(@administrador.errors.count, "erro") %> :
+                </h2>
+                <ul style="list-style-type: none;">
+                  <% @administrador.errors.full_messages.each do |mensagem| %>
+                    <li class="alert alert-danger" role="alert"><%= mensagem %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="row" align="justify">
+              <div class="col-sm-6">
+                <p>
+                  <%= formulario.label value='Nome completo' %><br>
+                  <%= formulario.text_field :nome, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p>
+                  <%= formulario.label value='E-mail' %><br>
+                  <%= formulario.email_field :email, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <div class = "row" align="justify">
+              <div class="col-sm-6">
+                <p>
+                  <%= formulario.label value='Telefone (WhatsApp)' %><br>
+                  <%= formulario.text_field :telefone, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p align="justify">
+                  <%= formulario.label value='Em que cidade você administra o curso?' %><br>
+                  <%= formulario.radio_button :cidade_voluntario, 'Recife', id:"cidade_admin_Recife" %>
+                  <%= formulario.label :recife, 'Recife' %><br>
+                  <%= formulario.radio_button :cidade_voluntario, 'Garanhuns', id:"cidade_admin_Garanhuns" %>
+                  <%= formulario.label :garanhuns, 'Garanhuns' %><br>
+                  <%= formulario.radio_button :cidade_voluntario, 'Ambas', id:"cidade_admin_Ambas" %>
+                  <%= formulario.label :ambas, 'Ambas' %><br>
+                </p>
+              </div>
+            </div>
+            <div class = "row" align="justify">
+              <div class="col-sm-6">
+                <p>
+                  <%= formulario.label value='Senha' %><br>
+                  <%= formulario.password_field :password, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p>
+                  <%= formulario.label value='Confirme a Senha' %><br>
+                  <%= formulario.password_field :password_confirmation, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <p>
+              <%= formulario.submit value='Concluir', id:"criar_administrador", class:'btn btn-success' %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

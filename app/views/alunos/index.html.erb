@@ -7,21 +7,19 @@
             <span class="section-heading-lower">Todos os Alunos Inscritos</span>
           </h2>
           <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Nome Completo</th>
-                <th>Email</th>
-                <th>Idade</th>
-                <th>Telefone</th>
-                <th>Cor</th>
-                <th>Gênero</th>
-                <th>Grau de Instrução</th>
-                <th>Área</th>
-                <th>Atuação em Movimento Social</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @alunos.each do |aluno| %>
+            <% @alunos.each do |aluno| %>
+              <thead>
+                <tr>
+                  <th>Nome Completo</th>
+                  <th>Email</th>
+                  <th>Idade</th>
+                  <th>Telefone</th>
+                  <th>Cor</th>
+                  <th>Gênero</th>
+                  <th>Grau de Instrução</th>
+                </tr>
+              </thead>
+              <tbody>
                 <tr>
                   <td>
                     <%= aluno.nome %>
@@ -44,6 +42,32 @@
                   <td>
                     <%= aluno.grau_instrucao %>
                   </td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Escola</th>
+                  <th>Tipo de Escola</th>
+                  <th>Nome do Responsável</th>
+                  <th>Contato do Responsável</th>
+                  <th>Área</th>
+                  <th>Atuação em Movimento Social</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <%= aluno.escola %>
+                  </td>
+                  <td>
+                    <%= aluno.tipo_escola %>
+                  </td>
+                  <td>
+                    <%= aluno.nome_responsavel %>
+                  </td>
+                  <td>
+                    <%= aluno.contato_responsavel %>
+                  </td>
                   <td>
                     <%= aluno.area %>
                   </td>
@@ -54,8 +78,8 @@
                     <%= link_to 'Editar Informações de Aluno', edit_aluno_path(aluno) %>
                   </td>
                 </tr>
-              <%end%>
-            </tbody>
+              </tbody>
+            <%end%>
           </table>
         </div>
       </div>

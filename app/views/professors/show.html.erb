@@ -63,9 +63,11 @@
                     end
                 %>
               </td>
-              <td>
-                <%= link_to 'Editar Dados', edit_professor_path(@professor) %>
-              </td>
+              <% if @professor.id == usuario_atual.id %>
+                <td>
+                  <%= link_to 'Editar Informações', edit_professor_path(@professor) %>
+                </td>
+              <% end %>
             </tr>
           </table>
         </div>

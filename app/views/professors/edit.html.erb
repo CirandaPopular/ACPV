@@ -4,11 +4,11 @@
       <div class="col-xl-12 mx-auto">
         <div class="intro-text left-0 text-center bg-faded p-5 rounded">
           <h2 class="section-heading mb-4">
-            <span class="section-heading-lower">Inscrição de Professor</span>
+            <span class="section-heading-lower">Editar Inscrição de Professor</span>
           </h2>
           <%= form_with scope: :professor, url: professor_path, method: :patch, local: true do |formulario| %>
-            <% if @professor.errors.any? %>1
-              <div id="erro_inscricao">
+            <% if @professor.errors.any? %>
+              <div id="erro_edicao">
                 <h2 style="color:red;">
                   <%= pluralize(@professor.errors.count, "erro") %>:
                 </h2>

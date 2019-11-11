@@ -20,14 +20,18 @@ class ProfessorsController < ApplicationController
     aux = @professor.disponibilidade_voluntario.split('_')
     @professor.disponibilidade_voluntario = aux[2]
     if @professor.save
-      redirect_to @professor
+      redirect_to sucesso_path
     else
       render 'new'
     end
   end
   def update
     @professor = Professor.find(params[:id])
-    if @professor.update!(parametros_professor)
+    aux = @professor.cidade_voluntario.split('_')
+    @professor.cidade_voluntario = aux[2]
+    aux = @professor.disponibilidade_voluntario.split('_')
+    @professor.disponibilidade_voluntario = aux[2]
+    if @professor.update(parametros_professor)
       redirect_to @professor
     else
       render 'edit'

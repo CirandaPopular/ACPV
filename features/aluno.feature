@@ -3,6 +3,7 @@ Feature: Inscricao de Aluno
   I want to realizar a inscricao para o curso atraves do sistema
   So that eu nao precise fazer isso manualmente
 
+#CENÁRIOS REFERENTES À INSCRIÇÃO DE ALUNOS
   Scenario: Fazer a inscricao de um aluno corretamente
     Given Eu estou na pagina de inscricao de alunos
     When Eu preencho o campo nome completo com "Nome Completo" e o campo idade com "19"
@@ -15,7 +16,7 @@ Feature: Inscricao de Aluno
     And Eu seleciono "Estudante de Graduacao" no campo grau de instrucao e "Sim" no campo ja fez ENEM
     And Eu seleciono "Humanas" no campo area e "Sim" no campo atuacao em movimento social
     And Eu clico no botao de concluir inscricao
-    Then Eu vejo que a inscricao do aluno de nome "Nome Completo" foi efetuada com sucesso
+    Then Eu vejo que a inscricao foi efetuada com sucesso
 
   Scenario: Fazer a inscricao de um aluno com e-mail invalido
     Given Eu estou na pagina de inscricao de alunos
