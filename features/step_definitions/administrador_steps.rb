@@ -53,10 +53,6 @@ Then("Eu visualizo a Lista de Alunos") do
   expect(page).to have_current_path(alunos_path)
 end
 
-Then("Eu vejo o menu de administradores") do
-  expect(page).to have_current_path(menu_administrador_path)
-end
-
 Given("Eu estou na pagina de selecao de alunos") do
   visit 'selecao_aluno'
   expect(page).to have_content('Seleção de Alunos')
