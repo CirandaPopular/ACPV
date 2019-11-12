@@ -1,0 +1,169 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Editar Inscrição de Aluno</span>
+          </h2>
+          <%= form_with scope: :aluno, url: aluno_path, method: :patch, local: true do |formulario| %>
+            <% if @aluno.errors.any? %>
+              <div id="erro_inscricao">
+                <h2 style="color:red;">
+                  <%= pluralize(@aluno.errors.count, "erro") %> :
+                </h2>
+                <ul style="list-style-type: none;">
+                  <% @aluno.errors.full_messages.each do |mensagem| %>
+                    <li class="alert alert-danger" role="alert"><%= mensagem %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="row">
+              <div class="col-sm-8">
+                <p align="justify">
+                  <%= formulario.label value='Nome Completo' %><br>
+                  <%= formulario.text_field :nome, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p align="justify">
+                  <%= formulario.label value='Idade' %><br>
+                  <%= formulario.text_field :idade, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <div class = "row">
+              <div class="col-sm-8">
+                <p align="justify">
+                  <%= formulario.label value='E-mail' %><br>
+                  <%= formulario.email_field :email, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p align="justify">
+                  <%= formulario.label value='Telefone (WhatsApp)' %><br>
+                  <%= formulario.text_field :telefone, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <p align="justify">
+                  <%= formulario.label value='Rua' %><br>
+                  <%= formulario.text_field :rua, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-3">
+                <p align="justify">
+                  <%= formulario.label value='Bairro' %><br>
+                  <%= formulario.text_field :bairro, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-3">
+                <p align="justify">
+                  <%= formulario.label value='Cidade' %><br>
+                  <%= formulario.text_field :cidade, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <p align="justify">
+                  <%= formulario.label value='Cor ou raça' %><br>
+                  <%= formulario.radio_button :cor, 'Negro', id:"cor_Negro" %>
+                  <%= formulario.label :negro, 'Negro' %><br>
+                  <%= formulario.radio_button :cor, 'Indígena', id:"cor_Indigena" %>
+                  <%= formulario.label :indigena, 'Indígena' %><br>
+                  <%= formulario.radio_button :cor, 'Pardo', id:"cor_Pardo" %>
+                  <%= formulario.label :pardo, 'Pardo' %><br>
+                  <%= formulario.radio_button :cor, 'Branco', id:"cor_Branco" %>
+                  <%= formulario.label :branco, 'Branco' %><br>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p align="justify">
+                  <%= formulario.label value='Gênero' %><br>
+                  <%= formulario.radio_button :genero, 'Masculino', id:"genero_Masculino" %>
+                  <%= formulario.label :masculino, 'Masculino' %><br>
+                  <%= formulario.radio_button :genero, 'Feminino', id:"genero_Feminino" %>
+                  <%= formulario.label :feminino, 'Feminino' %><br>
+                  <%= formulario.radio_button :genero, 'Outros', id:"genero_Outros" %>
+                  <%= formulario.label :outros, 'Outros' %><br>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class = "col-sm-8">
+                <p align="justify">
+                  <%= formulario.label value='Nome Completo do Responsável' %><br>
+                  <%= formulario.text_field :nome_responsavel, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p align="justify">
+                  <%= formulario.label value='Contato do Responsável' %><br>
+                  <%= formulario.text_field :contato_responsavel, class:'form-control' %>
+                </p>
+              </div>
+            </div>
+            <div class ="row">
+              <div class="col-sm-8">
+                <p align="justify">
+                  <%= formulario.label value='Escola (Onde estuda ou onde concluiu o Ensino Médio)' %><br>
+                  <%= formulario.text_field :escola, class:'form-control' %>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p align="justify">
+                  <%= formulario.label value='Tipo de escola' %><br>
+                  <%= formulario.select(:tipo_escola, [%w(Particular tipo_escola_Particular), %w(Pública tipo_escola_Publica)], {}, :id => "tipo_escola") %>
+                </p>
+              </div>
+            </div>
+            <div class ="row">
+              <div class="col-sm-6">
+                <p align="justify">
+                  <%= formulario.label :grau_instrucao, value='Grau de instrução' %><br>
+                  <%= formulario.radio_button :grau_instrucao, 'Estudante de Ensino Médio', id:"grau_instrucao_Medio" %>
+                  <%= formulario.label :ensino_medio_incompleto, 'Estudante de Ensino Médio' %><br>
+                  <%= formulario.radio_button :grau_instrucao, 'Ensino Médio Completo', id:"grau_instrucao_Completo" %>
+                  <%= formulario.label :ensino_medio_completo, 'Ensino Médio Completo' %><br>
+                  <%= formulario.radio_button :grau_instrucao, 'Estudante de Graduacao', id:"grau_instrucao_Graduacao" %>
+                  <%= formulario.label :ensino_superior_incompleto, 'Estudante de Graduacao' %><br>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p align="justify">
+                  <%= formulario.label value='Área' %><br>
+                  <%= formulario.radio_button :area, 'Humanas', id:"area_Humanas" %>
+                  <%= formulario.label :humanas, 'Humanas' %><br>
+                  <%= formulario.radio_button :area, 'Exatas', id:"area_Exatas" %>
+                  <%= formulario.label :exatas, 'Exatas' %><br>
+                  <%= formulario.radio_button :area, 'Saúde', id:"area_Saude" %>
+                  <%= formulario.label :saude, 'Saúde' %><br>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <p align="justify">
+                  <%= formulario.label :fez_enem, value='Já fez ENEM?' %><br>
+                  <%= formulario.select(:fez_enem, [%w(Não fez_enem_Nao), %w(Sim fez_enem_Sim)], {}, :id => "fez_enem") %>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p align="justify">
+                  <%= formulario.label value='Tem atuação em algum movimento social?' %><br>
+                  <%= formulario.select(:atuacao_mov_social, [%w(Não atuacao_mov_social_Nao), %w(Sim atuacao_mov_social_Sim)], {}, :id => "atuacao_mov_social") %>
+                </p>
+              </div>
+            </div>
+            <br>
+            <%= formulario.submit value='Concluir Inscrição', id:"concluir_inscricao", class:'btn btn-primary btn-xl' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

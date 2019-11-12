@@ -24,6 +24,11 @@
                 <strong>Cidade onde Administra o Curso:</strong>
                 <%= @administrador.cidade_voluntario %>
               </td>
+              <% if @administrador.id == usuario_atual.id %>
+                <td>
+                  <%= link_to 'Editar Informações', edit_administrador_path(@administrador) %>
+                </td>
+              <% end %>
             </tr>
           </table>
         </div>

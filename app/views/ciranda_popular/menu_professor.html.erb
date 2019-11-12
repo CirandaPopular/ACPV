@@ -11,18 +11,22 @@
             <div class="col-sm-6">
               <p align="center">
                 <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
-                  <%= link_to 'Adicionar Apostila', root_path, style:"color:white" %>
+                  <%= link_to '*Adicionar Apostila', root_path, style:"color:white" %>
                 </button>
                 <br><br>
                 <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
-                  <%= link_to 'Minhas Turmas', root_path, style:"color:white" %>
+                  <%= link_to '*Minhas Turmas', root_path, style:"color:white" %>
                 </button>
               </p>
             </div>
             <div class="col-sm-6">
               <p align="center">
                 <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
-                  <%= link_to 'Meu Perfil', professors_path + '/' + usuario_atual.id.to_s, style:"color:white" %>
+                  <%= link_to 'Minhas Informações', professors_path + '/' + usuario_atual.id.to_s, style:"color:white", id:"minhas_informacoes" %>
+                </button>
+                <br><br>
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to '*Alterar Minha Senha', root_path, style:"color:white" %>
                 </button>
               </p>
             </div>
