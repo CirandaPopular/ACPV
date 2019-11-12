@@ -1,0 +1,78 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-15 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Seleção de Alunos</span>
+          </h2>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Gênero</th>
+              <th>Mov. Social</th>
+              <th>Área</th>
+              <th>Escola</th>
+              <th>Fez Enem?</th>
+              <th>Endereço</th>
+              <th>Cor</th>
+              <th>Status da Inscrição</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @alunos.each do |aluno|
+              @aluno = Aluno.find(aluno.id)
+              if(@aluno.inscricao_aprovada != true)
+%>
+              <tr>
+                <td>
+                  <%= @aluno.nome %>
+                </td>
+                <td>
+                  <%= @aluno.idade %>
+                </td>
+                <td>
+                  <%= @aluno.genero %>
+                </td>
+                <td>
+                  <%= @aluno.atuacao_mov_social %>
+                </td>
+                <td>
+                  <%= @aluno.area %>
+                </td>
+                <td>
+                  <%= @aluno.escola %>, <%= @aluno.tipo_escola %>
+                </td>
+                <td>
+                  <%= @aluno.fez_enem %>
+                </td>
+                <td>
+                  <%= @aluno.rua %>, <%= @aluno.bairro %>, <%= @aluno.cidade %>
+
+                </td>
+                <td>
+                  <%= @aluno.cor %>
+                </td>
+                <td>
+                  <%= if @aluno.inscricao_aprovada
+                        "Aprovada"
+                      else
+                        "Aprovação Pendente"
+                      end
+                  %>
+                </td>
+                <td>
+                  <%= link_to "Aprovar", alterar_inscricao_aluno_path(@aluno.id)%>
+                </td>
+              </tr>
+            <% end
+               end%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

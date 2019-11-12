@@ -13,16 +13,16 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 
 // Load package.json for banner
-const pkg = require('./package.json');
+const pkg = require("./package.json");
 
 // Set the banner content
-const banner = ['/*!\n',
-  ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-  ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-  ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
-  ' */\n',
-  '\n'
-].join('');
+const banner = ["/*!\n",
+  " * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n",
+  " * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n",
+  " * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n",
+  " */\n",
+  "\n"
+].join("");
 
 // BrowserSync
 function browserSync(done) {
@@ -49,14 +49,14 @@ function clean() {
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
   // Bootstrap
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
-    .pipe(gulp.dest('./vendor/bootstrap'));
+  var bootstrap = gulp.src("./node_modules/bootstrap/dist/**/*")
+    .pipe(gulp.dest("./vendor/bootstrap"));
   // jQuery
   var jquery = gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
+      "./node_modules/jquery/dist/*",
+      "!./node_modules/jquery/dist/core.js"
     ])
-    .pipe(gulp.dest('./vendor/jquery'));
+    .pipe(gulp.dest("./vendor/jquery"));
   return merge(bootstrap, jquery);
 }
 
@@ -74,7 +74,7 @@ function css() {
       cascade: false
     }))
     .pipe(header(banner, {
-      pkg: pkg
+      pkg
     }))
     .pipe(gulp.dest("./css"))
     .pipe(rename({

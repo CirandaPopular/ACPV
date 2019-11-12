@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_053426) do
+ActiveRecord::Schema.define(version: 2019_11_12_121117) do
 
   create_table "administradores", force: :cascade do |t|
     t.string "nome"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_053426) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+    t.boolean "eh_administrador"
     t.index ["email"], name: "index_administradores_on_email"
   end
 
@@ -39,6 +40,10 @@ ActiveRecord::Schema.define(version: 2019_11_07_053426) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "endereco"
+    t.string "password_digest"
+    t.boolean "eh_administrador"
+    t.boolean "inscricao_aprovada"
+    t.index ["email"], name: "index_professors_on_email"
   end
 
   create_table "professors_turmas", id: false, force: :cascade do |t|

@@ -7,8 +7,7 @@
           <span class="section-heading-upper">Curso Pré-Enem Ciranda Popular</span>
           <span class="section-heading-lower">O QUE SOMOS?</span>
         </h2>
-        <p class="mb-3">É um curso pré-vestibular realizado pela Frente Brasil Popular em parceria com a Universidade Federal Rural de Pernambuco (UFRPE) e a Rede de Cursinhos Populares Podemos Mais, do movimento Levante Popular da Juventude. O projeto tem como objetivo formar turmas de jovens interessados ​​em entrar na universidade e participar de aulas gratuitas aplicadas por professores voluntários.
-        </p>
+        <p class="mb-3", align="justify">Um curso pré-vestibular realizado pela Frente Brasil Popular em parceria com a Universidade Federal Rural de Pernambuco (UFRPE) e a Rede de Cursinhos Populares Podemos Mais, do movimento Levante Popular da Juventude. O projeto tem como objetivo formar turmas de jovens interessados em entrar na universidade e participar de aulas gratuitas aplicadas por professores voluntários. </p>
         <div class="intro-button mx-auto">
           <a class="btn btn-primary btn-xl" href="<%= new_aluno_path %>">Quero fazer parte!</a>
         </div>
@@ -23,10 +22,33 @@
       <div class="col-xl-9 mx-auto">
         <div class="cta-inner text-center rounded">
           <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">Our Promise</span>
-            <span class="section-heading-lower">To You</span>
+            <span class="section-heading-upper">Algumas Informações e</span>
+            <span class="section-heading-lower">Materiais</span>
           </h2>
-          <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <p align="center">
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Apostilas', root_path, style:"color:white" %>
+                </button>
+                <br><br>
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Horários de Aula', root_path, style:"color:white" %>
+                </button>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <p align="center">
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Link', root_path, style:"color:white" %>
+                </button>
+                <br><br>
+                <button class="btn btn-primary btn-xl" style="height:50px;width:250px">
+                  <%= link_to 'Link', root_path, style:"color:white" %>
+                </button>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -52,9 +52,8 @@ When("Eu clico no botao de concluir inscricao") do
   click_button 'concluir_inscricao'
 end
 
-Then("Eu vejo que a inscricao do aluno de nome {string} foi efetuada com sucesso") do |nome|
-  expect(page).to have_content(nome)
-  expect(page).to have_current_path(alunos_path + '/' + Aluno.last.id.to_s)
+Then("Eu vejo que a inscricao foi efetuada com sucesso") do
+  expect(page).to have_current_path(sucesso_path)
 end
 
 Then("Eu vejo uma mensagem de erro indicando que a inscricao nao foi efetuada") do

@@ -1,54 +1,87 @@
-<div  style="background-color: #ffffff; margin: 2rem;">
-<h2 style="margin: 2rem; padding-top:1rem; margin-bottom: -1rem;">Todos os alunos inscritos</h2>
-<br>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>Nome Completo</th>
-    <th>Email</th>
-    <th>Idade</th>
-    <th>Telefone</th>
-    <th>Cor</th>
-    <th>Gênero</th>
-    <th>Grau de Instrução</th>
-    <th>Área</th>
-    <th>Atuação em Movimento Social</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-
-  <% @alunos.each do |aluno| %>
-    <tr>
-      <td>
-        <%= aluno.nome %>
-      </td>
-      <td>
-        <%= aluno.email %>
-      </td>
-      <td>
-        <%= aluno.idade %>
-      </td>
-      <td>
-        <%= aluno.telefone %>
-      </td>
-      <td>
-        <%= aluno.cor %>
-      </td>
-      <td>
-        <%= aluno.genero %>
-      </td>
-      <td>
-        <%= aluno.grau_instrucao %>
-      </td>
-      <td>
-        <%= aluno.area %>
-      </td>
-      <td>
-        <%= aluno.atuacao_mov_social %>
-      </td>
-    </tr>
-  <%end%>
-  </tbody>
-</table>
-</div>
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Todos os Alunos Inscritos</span>
+          </h2>
+          <table class="table table-striped">
+            <% @alunos.each do |aluno| %>
+              <thead>
+                <tr>
+                  <th>Nome Completo</th>
+                  <th>Email</th>
+                  <th>Idade</th>
+                  <th>Telefone</th>
+                  <th>Cor</th>
+                  <th>Gênero</th>
+                  <th>Grau de Instrução</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <%= aluno.nome %>
+                  </td>
+                  <td>
+                    <%= aluno.email %>
+                  </td>
+                  <td>
+                    <%= aluno.idade %>
+                  </td>
+                  <td>
+                    <%= aluno.telefone %>
+                  </td>
+                  <td>
+                    <%= aluno.cor %>
+                  </td>
+                  <td>
+                    <%= aluno.genero %>
+                  </td>
+                  <td>
+                    <%= aluno.grau_instrucao %>
+                  </td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Escola</th>
+                  <th>Tipo de Escola</th>
+                  <th>Nome do Responsável</th>
+                  <th>Contato do Responsável</th>
+                  <th>Área</th>
+                  <th>Atuação em Movimento Social</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <%= aluno.escola %>
+                  </td>
+                  <td>
+                    <%= aluno.tipo_escola %>
+                  </td>
+                  <td>
+                    <%= aluno.nome_responsavel %>
+                  </td>
+                  <td>
+                    <%= aluno.contato_responsavel %>
+                  </td>
+                  <td>
+                    <%= aluno.area %>
+                  </td>
+                  <td>
+                    <%= aluno.atuacao_mov_social %>
+                  </td>
+                  <td>
+                    <%= link_to 'Editar Informações de Aluno', edit_aluno_path(aluno) %>
+                  </td>
+              </tbody>
+            <%end%>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
