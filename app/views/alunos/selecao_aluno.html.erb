@@ -64,7 +64,7 @@
                   %>
                 </td>
                 <td>
-                  <%= link_to "Aprovar", alterar_inscricao_aluno_path(@aluno.id)%>
+                  <%= link_to "Aprovar"+@aluno.nome.gsub(" ","")+@aluno.idade.to_s+@aluno.cor, alterar_inscricao_aluno_path(@aluno.id)%>
                 </td>
               </tr>
             <% end

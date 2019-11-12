@@ -24,8 +24,30 @@ ActiveRecord::Schema.define(version: 2019_11_12_121117) do
     t.index ["email"], name: "index_administradores_on_email"
   end
 
-# Could not dump table "alunos" because of following StandardError
-#   Unknown type '' for column 'belongs_to'
+  create_table "alunos", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.integer "idade"
+    t.string "telefone"
+    t.string "rua"
+    t.string "bairro"
+    t.string "cidade"
+    t.string "cor"
+    t.string "genero"
+    t.string "nome_responsavel"
+    t.string "contato_responsavel"
+    t.string "escola"
+    t.string "tipo_escola"
+    t.string "grau_instrucao"
+    t.string "fez_enem"
+    t.string "area"
+    t.string "atuacao_mov_social"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "turma_id"
+    t.boolean "inscricao_aprovada"
+    t.index ["turma_id"], name: "index_alunos_on_turma_id"
+  end
 
   create_table "professors", force: :cascade do |t|
     t.string "nome"
