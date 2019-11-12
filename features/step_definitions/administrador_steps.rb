@@ -130,10 +130,41 @@ And("O professor com email {string} existe") do |email|
   click_button 'concluir_inscricao'
 end
 
-Given("Eu nao vejo mais o aluno {string} listado") do |nome|
+Given("Eu nao vejo mais o aluno com nome {string} listado") do |nome|
   expect(page).to have_no_content(nome)
 end
 
 Given("Eu nao vejo mais o professor com email {string} listado") do |email|
   expect(page).to have_no_content(email)
+end
+
+When("Eu clico em Lista de Alunos") do
+  click_link "Lista de Alunos"
+end
+
+When("Eu clico em Editar Informacoes de Aluno do aluno de nome {string}") do |nome|
+  click_link "Editar"+nome.gsub(" ","")
+end
+
+And("Eu preencho o campo contato do responsavel com {string}") do |telefone|
+  fill_in 'aluno[contato_responsavel]', :with => telefone
+end
+
+Then("Eu vejo que o contato do responsavel do aluno de nome {string} foi alterado para {string}") do |nome, telefone|
+  expect(page).to have_content("Nome completo: "+nome)
+  expect(page).to have_content("Contato do responsável: "+telefone)
+end
+
+And("Eu preencho o campo rua com {string}") do |rua|
+  fill_in 'aluno[rua]', :with => rua
+end
+
+Then("Eu vejo que a rua do aluno de nome {string} foi alterada para {string}") do |nome, rua|
+  expect(page).to have_content("Nome completo: "+nome)
+  expect(page).to have_content("Rua: "+rua)
+end
+
+Then("Eu vejo que a escola do aluno de nome {string} foi alterada para {string}") do |nome, escola|
+  expect(page).to have_content("Nome completo: "+nome)
+  expect(page).to have_content("Escola: "+escola)
 end

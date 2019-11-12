@@ -8,7 +8,7 @@
           </h2>
           <%= form_with scope: :aluno, url: aluno_path, method: :patch, local: true do |formulario| %>
             <% if @aluno.errors.any? %>
-              <div id="erro_inscricao">
+              <div id="erro_edicao">
                 <h2 style="color:red;">
                   <%= pluralize(@aluno.errors.count, "erro") %> :
                 </h2>
