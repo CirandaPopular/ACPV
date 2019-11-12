@@ -25,6 +25,10 @@ When("Eu clico no botao de concluir") do
   click_button 'criar_administrador'
 end
 
+Then("Eu vejo o menu de administradores") do
+  expect(page).to have_current_path(menu_administrador_path)
+end
+
 When("Eu clico no botao Lista de Professores") do
   click_link 'Lista de Professores'
 end
