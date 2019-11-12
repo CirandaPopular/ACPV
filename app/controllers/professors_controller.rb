@@ -45,7 +45,7 @@ class ProfessorsController < ApplicationController
     @professor.delete
     redirect_to root_path
   end
-  def aprovar_inscricao
+  def alterar_inscricao
     @professor = Professor.find(params[:id])
     if @professor.inscricao_aprovada == true
       @professor.inscricao_aprovada = false

@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   post   'login'                     => 'sessoes#create'
   get    'logout'                    => 'sessoes#destroy'
   get    'selecao_professor'         => 'professors#selecao_professor'
-  get   'aprovar_inscricao/:id', :to => 'professors#aprovar_inscricao', :as => :aprovar_inscricao
+  get   'aprovar_inscricao/:id', :to => 'professors#alterar_inscricao', :as => :aprovar_inscricao
   put    'update/:id',           :to => 'professors#update',            :as => :atualizar_professor
   get    'sucesso'                   => 'ciranda_popular#inscricao_finalizada'
+  get    'selecao_aluno'             => 'alunos#selecao_aluno'
+  get    'aprovar_inscricao_aluno/:id', :to => 'alunos#alterar_inscricao', :as => :alterar_inscricao_aluno
   root   'ciranda_popular#inicio'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

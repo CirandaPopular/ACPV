@@ -63,7 +63,7 @@
                   %>
                 </td>
                 <td>
-                  <%= link_to "Aprovar", aprovar_inscricao_path(@professor.id)%>
+                  <%= link_to "Aprovar", aprovar_inscricao_path(@professor.id), id:@professor.email%>
                 </td>
               </tr>
               <% end

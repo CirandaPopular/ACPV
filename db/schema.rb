@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_09_115034) do
+ActiveRecord::Schema.define(version: 2019_11_12_121117) do
 
   create_table "administradores", force: :cascade do |t|
     t.string "nome"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_11_09_115034) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "turma_id"
+    t.boolean "inscricao_aprovada"
     t.index ["turma_id"], name: "index_alunos_on_turma_id"
   end
 
