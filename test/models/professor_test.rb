@@ -26,6 +26,11 @@ class ProfessorTest < ActiveSupport::TestCase
     assert_not professor.save
   end
 
+  test 'um professor sem e-mail nao deve ser salvo' do
+    professor = Professor.new nome:'Jose Carlos', email:nil, idade:63, telefone:'81989296483', endereco:'Nome da Rua, Nome do Bairro', cidade:'Garanhuns', grau_instrucao:'Doutorado', cidade_voluntario:'Garanhuns', disponibilidade_voluntario:'Sim', area_atuacao:'Quimica', password:'1234567'
+    assert_not professor.save
+  end
+
   test 'apenas um professor deve ser criado por vez' do
     professoresIni = Professor.all.length
     professor = Professor.new nome:'Jose Carlos', email:'jose_carlos@hotmail.com', idade:63, telefone:'81989296483', endereco:'Nome da Rua, Nome do Bairro', cidade:'Garanhuns', grau_instrucao:'Doutorado', cidade_voluntario:'Garanhuns', disponibilidade_voluntario:'Sim', area_atuacao:'Quimica', password:'1234567'
