@@ -28,18 +28,3 @@ end
 Then("Eu vejo o menu de administradores") do
   expect(page).to have_current_path(menu_administrador_path)
 end
-
-When("Eu clico em Lista de Alunos") do
-  expect(page).to have_current_path(menu_administrador_path)
-  click_link 'Lista de Alunos'
-  expect(page).to have_content("Todos os Alunos Inscritos")
-end
-
-And("Eu clico em Editar Informacoes de Aluno do aluno de nome {string}") do |nome|
-  click_link 'Editar Informações de Aluno'
-  expect(page).to have_content("Editar Inscrição de Aluno")
-end
-
-Then("Eu vejo que o telefone do aluno de nome {string} foi alterado para {string}") do |nome, telefone|
-  (find(aluno[find(aluno[nome]).id]).telefone).equal? telefone
-end
