@@ -8,8 +8,12 @@ class SessoesController < ApplicationController
     else
       @usuario = Professor.find_by(email: params[:sessao][:email].downcase)
       if @usuario && @usuario.authenticate(params[:sessao][:password])
-        login(@usuario)
-        redirect_to menu_professor_path
+        if @usuario.inscricao_aprovada
+          login(@usuario)
+          redirect_to menu_professor_path
+        else
+          redirect_to sem_permissao_path
+        end
       else
         render 'new'
       end

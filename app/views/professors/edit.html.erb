@@ -118,9 +118,23 @@
                   <%= formulario.select :disponibilidade_voluntario, [%w(Sim disponibilidade_voluntario_Sim),%w(Não disponibilidade_voluntario_Não)],{},:id=>"disponibilidade_voluntario" %>
                 </p>
               </div>
+              <div class = "row" align="justify">
+                <div class="col-sm-6">
+                  <p>
+                    <%= formulario.label value='Nova Senha' %><br>
+                    <%= formulario.password_field :password, class:'form-control' %>
+                  </p>
+                </div>
+                <div class="col-sm-6">
+                  <p>
+                    <%= formulario.label value='Confirme a Nova Senha' %><br>
+                    <%= formulario.password_field :password_confirmation, class:'form-control' %>
+                  </p>
+                </div>
+              </div>
             </div>
             <br>
-            <%= formulario.submit value='Concluir Inscrição', id:"concluir_inscricao", class:'btn btn-primary btn-xl' %>
+            <%= formulario.submit value='Concluir Alterações', id:"concluir_inscricao", class:'btn btn-primary btn-xl' %>
           <% end %>
         </div>
       </div>

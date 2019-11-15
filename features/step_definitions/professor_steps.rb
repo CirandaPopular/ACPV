@@ -105,3 +105,11 @@ end
 When("Eu preencho o campo idade com {string}") do |idade|
   fill_in 'professor[idade]', :with => idade
 end
+
+Then("Eu vejo que ainda nao tenho permissao para fazer login") do
+  expect(page).to have_current_path(sem_permissao_path)
+end
+
+And("Eu faco logout") do
+  click_link "Logout"
+end

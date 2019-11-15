@@ -74,6 +74,11 @@ Feature: Editar Inscricao de Professor
     And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
     And Eu clico no botao de concluir inscricao
     And Eu vejo que a inscricao foi efetuada com sucesso
+    And Eu sou administrador e estou logado
+    And Eu estou na pagina de selecao de professores
+    And Eu clico no botao Aprovar o professor com email "email@gmail.com"
+    And Eu nao vejo mais o professor com email "email@gmail.com" listado
+    And Eu faco logout
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -87,7 +92,11 @@ Feature: Editar Inscricao de Professor
     And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
     And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
     And Eu clico no botao de concluir inscricao
-    And Eu vejo que a inscricao foi efetuada com sucesso
+    And Eu sou administrador e estou logado
+    And Eu estou na pagina de selecao de professores
+    And Eu clico no botao Aprovar o professor com email "email@gmail.com"
+    And Eu nao vejo mais o professor com email "email@gmail.com" listado
+    And Eu faco logout
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "senha1"
     And Eu clico no botao de fazer login
@@ -99,6 +108,19 @@ Feature: Editar Inscricao de Professor
     And Eu clico no botao de fazer login
     Then Eu vejo que o login nao foi efetuado
 
+  Scenario: Fazer o login de um professor que nao teve sua inscricao aprovada
+    Given Eu estou na pagina de inscricao de professores
+    And Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"
+    And Eu preencho o campo e-mail com "email@gmail.com" e o campo telefone com "87999000000"
+    And Eu preencho o campo endereco com "Endereco" e o campo cidade com "Nome da Cidade"
+    And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
+    And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
+    And Eu clico no botao de concluir inscricao
+    And Eu estou na pagina de login
+    When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
+    And Eu clico no botao de fazer login
+    Then Eu vejo que ainda nao tenho permissao para fazer login
+
 #CENÁRIOS REFERENTES À EDIÇÃO DE INSCRIÇÃO DE PROFESSORES
   Scenario: Alterar o telefone de um professor corretamente
     Given Eu estou na pagina de inscricao de professores
@@ -109,6 +131,11 @@ Feature: Editar Inscricao de Professor
     And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
     And Eu clico no botao de concluir inscricao
     And Eu vejo que a inscricao foi efetuada com sucesso
+    And Eu sou administrador e estou logado
+    And Eu estou na pagina de selecao de professores
+    And Eu clico no botao Aprovar o professor com email "email@gmail.com"
+    And Eu nao vejo mais o professor com email "email@gmail.com" listado
+    And Eu faco logout
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -128,6 +155,11 @@ Feature: Editar Inscricao de Professor
     And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
     And Eu clico no botao de concluir inscricao
     And Eu vejo que a inscricao foi efetuada com sucesso
+    And Eu sou administrador e estou logado
+    And Eu estou na pagina de selecao de professores
+    And Eu clico no botao Aprovar o professor com email "email@gmail.com"
+    And Eu nao vejo mais o professor com email "email@gmail.com" listado
+    And Eu faco logout
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -147,6 +179,11 @@ Feature: Editar Inscricao de Professor
     And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
     And Eu clico no botao de concluir inscricao
     And Eu vejo que a inscricao foi efetuada com sucesso
+    And Eu sou administrador e estou logado
+    And Eu estou na pagina de selecao de professores
+    And Eu clico no botao Aprovar o professor com email "email@gmail.com"
+    And Eu nao vejo mais o professor com email "email@gmail.com" listado
+    And Eu faco logout
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -166,6 +203,11 @@ Feature: Editar Inscricao de Professor
     And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
     And Eu clico no botao de concluir inscricao
     And Eu vejo que a inscricao foi efetuada com sucesso
+    And Eu sou administrador e estou logado
+    And Eu estou na pagina de selecao de professores
+    And Eu clico no botao Aprovar o professor com email "email@gmail.com"
+    And Eu nao vejo mais o professor com email "email@gmail.com" listado
+    And Eu faco logout
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -185,6 +227,11 @@ Feature: Editar Inscricao de Professor
     And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
     And Eu clico no botao de concluir inscricao
     And Eu vejo que a inscricao foi efetuada com sucesso
+    And Eu sou administrador e estou logado
+    And Eu estou na pagina de selecao de professores
+    And Eu clico no botao Aprovar o professor com email "email@gmail.com"
+    And Eu nao vejo mais o professor com email "email@gmail.com" listado
+    And Eu faco logout
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
