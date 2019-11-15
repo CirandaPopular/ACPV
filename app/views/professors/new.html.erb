@@ -7,7 +7,7 @@
             <span class="section-heading-lower">Inscrição de Professor</span>
           </h2>
           <%= form_with scope: :professor, url: professors_path, local: true do |formulario| %>
-            <% if @professor.errors.any? %>1
+            <% if @professor.errors.any? %>
               <div id="erro_inscricao">
                 <h2 style="color:red;">
                   <%= pluralize(@professor.errors.count, "erro") %>:

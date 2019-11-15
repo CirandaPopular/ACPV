@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get   'aprovar_inscricao/:id', :to => 'professors#alterar_inscricao', :as => :aprovar_inscricao
   put    'update/:id',           :to => 'professors#update',            :as => :atualizar_professor
   get    'sucesso'                   => 'ciranda_popular#inscricao_finalizada'
+  get    'sem_permissao'             => 'ciranda_popular#sem_permissao'
   get    'selecao_aluno'             => 'alunos#selecao_aluno'
   get    'aprovar_inscricao_aluno/:id', :to => 'alunos#alterar_inscricao', :as => :alterar_inscricao_aluno
   root   'ciranda_popular#inicio'
