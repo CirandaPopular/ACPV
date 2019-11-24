@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'arquivos/index'
   get 'sessoes/new'
   get 'ciranda_popular/inicio'
   resources :alunos
@@ -15,6 +16,11 @@ Rails.application.routes.draw do
   get    'sucesso'                   => 'ciranda_popular#inscricao_finalizada'
   get    'selecao_aluno'             => 'alunos#selecao_aluno'
   get    'aprovar_inscricao_aluno/:id', :to => 'alunos#alterar_inscricao', :as => :alterar_inscricao_aluno
+  get    'add_apostila'              => 'arquivos#index'
+  get    'visualizar_apostilas'      => 'arquivos#show'
+  # root to: 'arquivos#index'
+  post 'arquivos/upload_arquivo'
+  post 'arquivos/download_arquivo'
   root   'ciranda_popular#inicio'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
