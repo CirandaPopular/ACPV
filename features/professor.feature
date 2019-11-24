@@ -66,28 +66,14 @@ Feature: Editar Inscricao de Professor
 
 #CENÁRIOS REFERENTES AO LOGIN DE PROFESSORES
   Scenario: Fazer o login de um professor corretamente
-    Given Eu estou na pagina de inscricao de professores
-    And Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"
-    And Eu preencho o campo e-mail com "email@gmail.com" e o campo telefone com "87999000000"
-    And Eu preencho o campo endereco com "Endereco" e o campo cidade com "Nome da Cidade"
-    And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
-    And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
-    And Eu clico no botao de concluir inscricao
-    And Eu vejo que a inscricao foi efetuada com sucesso
+    Given O professor com email "email@gmail.com" existe
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
     Then Eu vejo o menu de professores
 
   Scenario: Fazer o login de um professor com a senha incorreta
-    Given Eu estou na pagina de inscricao de professores
-    And Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"
-    And Eu preencho o campo e-mail com "email@gmail.com" e o campo telefone com "87999000000"
-    And Eu preencho o campo endereco com "Endereco" e o campo cidade com "Nome da Cidade"
-    And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
-    And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
-    And Eu clico no botao de concluir inscricao
-    And Eu vejo que a inscricao foi efetuada com sucesso
+    Given O professor com email "prof@gmail.com" existe
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "senha1"
     And Eu clico no botao de fazer login
@@ -101,14 +87,7 @@ Feature: Editar Inscricao de Professor
 
 #CENÁRIOS REFERENTES À EDIÇÃO DE INSCRIÇÃO DE PROFESSORES
   Scenario: Alterar o telefone de um professor corretamente
-    Given Eu estou na pagina de inscricao de professores
-    And Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"
-    And Eu preencho o campo e-mail com "email@gmail.com" e o campo telefone com "87999000000"
-    And Eu preencho o campo endereco com "Endereco" e o campo cidade com "Nome da Cidade"
-    And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
-    And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
-    And Eu clico no botao de concluir inscricao
-    And Eu vejo que a inscricao foi efetuada com sucesso
+    Given O professor com email "prof@gmail.com" existe
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -120,14 +99,7 @@ Feature: Editar Inscricao de Professor
     Then Eu vejo que meu telefone foi alterado para "81993992342"
 
   Scenario: Alterar a area de atuacao de um professor corretamente
-    Given Eu estou na pagina de inscricao de professores
-    And Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"
-    And Eu preencho o campo e-mail com "email@gmail.com" e o campo telefone com "87999000000"
-    And Eu preencho o campo endereco com "Endereco" e o campo cidade com "Nome da Cidade"
-    And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
-    And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
-    And Eu clico no botao de concluir inscricao
-    And Eu vejo que a inscricao foi efetuada com sucesso
+    Given O professor com email "prof@gmail.com" existe
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -139,14 +111,7 @@ Feature: Editar Inscricao de Professor
     Then Eu vejo que minha area de atuacao foi alterada para "Ingles"
 
   Scenario: Alterar o nome de um professor corretamente
-    Given Eu estou na pagina de inscricao de professores
-    And Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"
-    And Eu preencho o campo e-mail com "email@gmail.com" e o campo telefone com "87999000000"
-    And Eu preencho o campo endereco com "Endereco" e o campo cidade com "Nome da Cidade"
-    And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
-    And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
-    And Eu clico no botao de concluir inscricao
-    And Eu vejo que a inscricao foi efetuada com sucesso
+    Given O professor com email "prof@gmail.com" existe
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -158,14 +123,7 @@ Feature: Editar Inscricao de Professor
     Then Eu vejo que meu nome foi alterado para "Novo Nome Completo"
 
   Scenario: Alterar a cidade de um professor para uma com nome muito curto
-    Given Eu estou na pagina de inscricao de professores
-    And Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"
-    And Eu preencho o campo e-mail com "email@gmail.com" e o campo telefone com "87999000000"
-    And Eu preencho o campo endereco com "Endereco" e o campo cidade com "Nome da Cidade"
-    And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
-    And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
-    And Eu clico no botao de concluir inscricao
-    And Eu vejo que a inscricao foi efetuada com sucesso
+    Given O professor com email "prof@gmail.com" existe
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
@@ -177,14 +135,7 @@ Feature: Editar Inscricao de Professor
     Then Eu vejo uma mensagem de erro indicando que a alteracao nao foi efetuada
 
   Scenario: Alterar a idade de um professor para uma que contém letras
-    Given Eu estou na pagina de inscricao de professores
-    And Eu preencho o campo nome completo com "Nome Completo"  e o campo idade com "29"
-    And Eu preencho o campo e-mail com "email@gmail.com" e o campo telefone com "87999000000"
-    And Eu preencho o campo endereco com "Endereco" e o campo cidade com "Nome da Cidade"
-    And Eu seleciono "Mestrado" no campo grau de instrucao e "Garanhuns" no campo cidade para se voluntariar
-    And Eu seleciono "Sim" no campo disponibilidade e "Portugues" no campo area de atuacao
-    And Eu clico no botao de concluir inscricao
-    And Eu vejo que a inscricao foi efetuada com sucesso
+    Given O professor com email "prof@gmail.com" existe
     And Eu estou na pagina de login
     When Eu preencho o campo e-mail com "email@gmail.com" e o campo senha com "1234567"
     And Eu clico no botao de fazer login
