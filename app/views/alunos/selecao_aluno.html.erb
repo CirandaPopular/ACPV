@@ -64,13 +64,19 @@
                   %>
                 </td>
                 <td>
-                  <%= link_to "Aprovar"+@aluno.nome.gsub(" ","")+@aluno.idade.to_s+@aluno.cor, alterar_inscricao_aluno_path(@aluno.id)%>
+                  <%= link_to "Aprovar", alterar_inscricao_aluno_path(@aluno.id), id:@aluno.nome+@aluno.idade.to_s+@aluno.cor%>
                 </td>
               </tr>
             <% end
                end%>
             </tbody>
           </table>
+          <br><br>
+          <td>
+            <button class="btn btn-primary btn-xl" style="height:40px;width:140px">
+              <%= link_to "Voltar", menu_administrador_path, style:"color:white"%>
+            </button>
+          </td>
         </div>
       </div>
     </div>

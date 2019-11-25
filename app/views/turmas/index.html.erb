@@ -1,0 +1,47 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Turmas</span>
+          </h2>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Nome da Turma</th>
+              <th>Cidade</th>
+              <th>Professores</th>
+              <th>Alunos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% Turma.all.each do |turma| %>
+              <tr>
+                <td>
+                  <%= turma.nome %>
+                </td>
+                <td>
+                  <%= turma.cidade_turma %>
+                </td>
+                <td>
+                  <%= turma.professors.size.to_s %>
+                </td>
+                <td>
+                  <%= turma.alunos.size.to_s %>
+                </td>
+                <td>
+                  <%= link_to "Visualizar", turma_path(turma.id) %>
+                </td>
+                <td>
+                  <%= link_to "Editar", edit_turma_path(turma.id) %>
+                </td>
+              </tr>
+            <%end%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

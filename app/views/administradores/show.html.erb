@@ -26,11 +26,19 @@
               </td>
               <% if @administrador.id == usuario_atual.id %>
                 <td>
-                  <%= link_to 'Editar Informações', edit_administrador_path(@administrador) %>
+                  <button class="btn btn-primary btn-xl" style="height:60px;width:120px">
+                    <%= link_to 'Editar Informações', edit_administrador_path(@administrador), style:"color:white" %>
+                  </button>
                 </td>
               <% end %>
             </tr>
           </table>
+          <br><br>
+          <td>
+            <button class="btn btn-primary btn-xl" style="height:40px;width:140px">
+              <%= link_to "Voltar", menu_administrador_path, style:"color:white"%>
+            </button>
+          </td>
         </div>
       </div>
     </div>

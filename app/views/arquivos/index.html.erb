@@ -1,37 +1,42 @@
-<div class="panel panel-primary" style="background-color: white;">
-  <div class="panel-heading">
-    <h3 class="panel-title">Anexar</h3>
-  </div>
-  <div class="panel-body">
-    <%= form_tag({ action: :upload_arquivo }, { :multipart => true }) do |f| %>
-      <%= file_field_tag 'arquivo[]', :multiple => true %>
-      <div class="modal-footer">
-        <%= submit_tag 'Anexar', class: "btn btn-primary", data: { disable_with: "Anexando..." } %>
+<section class="page-section clearfix">
+  <div class="container intro-text left-0 text-center bg-faded p-5 rounded">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Anexar</h3>
       </div>
-    <% end %>
+      <div class="panel-body">
+        <%= form_tag({ action: :upload_arquivo }, { :multipart => true }) do |f| %>
+          <%= file_field_tag 'arquivo[]', :multiple => true %>
+          <div class="modal-footer">
+            <%= submit_tag 'Anexar', class: "btn btn-primary", data: { disable_with: "Anexando..." } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Arquivos Anexados</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Diretório</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @arquivos.each do |arquivo| %>
+              <tr>
+                <td><%= arquivo.id %></td>
+                <td><%= arquivo.diretorio_arquivo %></td>
+                <td><%= button_to 'Baixar', { action: :download_arquivo, diretorio: arquivo.diretorio_arquivo }, class: 'btn btn-primary' %></td>
+                <td><%= button_to 'Remover', { action: :remover_arquivo, id: arquivo.id }, class: 'btn btn-danger' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Arquivos Anexados</h3>
-  </div>
-  <div class="panel-body" style="background-color:white">
-    <table class="table table-hover">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Diretório</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @arquivos.each do |arquivo| %>
-        <tr>
-          <td><%= arquivo.id %></td>
-          <td><%= arquivo.diretorio_arquivo %></td>
-          <td><%= button_to 'Baixar', { action: :download_arquivo, diretorio: arquivo.diretorio_arquivo }, class: 'btn btn-primary' %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+</section>

@@ -42,7 +42,8 @@
               </div>
               <div class="col-sm-6">
                 <p align="justify">
-                   <%= formulario.select :cidade_voluntario, [%w(Garanhuns cidade_admin_Garanhuns),%w(Recife cidade_admin_Recife),%w(Ambas cidade_admin_Ambas)],{},:id=>"cidade_admin" %>
+                  <%= formulario.label value='Em que cidade você administra o curso?' %><br>
+                  <%= formulario.select :cidade_voluntario, [%w(Garanhuns cidade_admin_Garanhuns),%w(Recife cidade_admin_Recife),%w(Ambas cidade_admin_Ambas)],{},:id=>"cidade_admin" %>
                 </p>
               </div>
             </div>
@@ -60,8 +61,15 @@
                 </p>
               </div>
             </div>
+            <br>
             <p>
-              <%= formulario.submit value='Concluir', id:"criar_administrador", class:'btn btn-success' %>
+              <%= formulario.submit value='Concluir', id:"criar_administrador", class:'btn btn-primary btn-xl' %>
+            </p>
+            <br>
+            <p>
+              <button class="btn btn-primary btn-xl" style="height:38px;width:85px">
+                <%= link_to "Voltar", menu_administrador_path, style:"color:white"%>
+              </button>
             </p>
           <% end %>
         </div>

@@ -6,11 +6,12 @@
           <h2 class="section-heading mb-4">
             <span class="section-heading-lower">Criação de Turmas</span>
           </h2>
-          <%= form_with scope: :professor, url: professors_path, local: true do |formulario| %>
+          <br>
+          <%= form_with scope: :turma, url: turmas_path, local: true do |formulario| %>
             <% if @turma.errors.any? %>
-              <div id="erro_inscricao">
+              <div id="erro_criacao_turma">
                 <h2 style="color:red;">
-                  <%= pluralize(@turma.errors.count, "erro") %>:
+                  <%= pluralize(@turma.errors.count, "erro") %> :
                 </h2>
                 <ul style="list-style-type: none;">
                   <% @turma.errors.full_messages.each do |mensagem| %>
@@ -19,59 +20,22 @@
                 </ul>
               </div>
             <% end %>
-          <br>
-          <h4 class="section-heading mb-4">
-            <span class="section-heading-lower">Selecione os Professores da Turma</span>
-          </h4>
-          <table class="table table-striped">
-            <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Email</th>
-              <th>Idade</th>
-              <th>Telefone</th>
-              <th>Área de Atuação</th>
-              <th>Grau de Instrução</th>
-              <th>Cidade Aulas</th>
-            </tr>
-            </thead>
-            <tbody>
-            <% Professor.all.each do |professor|
-              professor = Professor.find(professor.id)
-              if(professor.inscricao_aprovada == true && professor.disponibilidade_voluntario == 'Sim' && cidade == professor.cidade_voluntario) %>
-                <tr>
-                  <td>
-                    <%= professor.nome %>
-                  </td>
-                  <td>
-                    <%= professor.email %>
-                  </td>
-                  <td>
-                    <%= professor.idade %>
-                  </td>
-                  <td>
-                    <%= professor.telefone %>
-                  </td>
-                  <td>
-                    <%= professor.area_atuacao %>
-                  </td>
-                  <td>
-                    <%= professor.grau_instrucao %>
-                  </td>
-                  <td>
-                    <%= professor.cidade_voluntario %>
-                  </td>
-                  <td>
-                    <%= link_to "Adicionar à Turma", root_path, id:professor.email%>
-                  </td>
-                </tr>
-              <% end
-              end
-              %>
-            </tbody>
-          </table>
-          <br>
-            <%end %>
+            <p align="justify">
+              <%= formulario.label value='Dê um nome à turma ' %><br>
+              <%= formulario.text_field :nome, class:'form-control' %>
+            </p>
+            <p align="justify">
+              <%= formulario.label value='Qual é a cidade da turma?' %><br>
+              <%= formulario.select :cidade_turma, [%w(Recife cidade_turma_Recife),%w(Garanhuns cidade_turma_Garanhuns)],{},:id=>"cidade_turma" %>
+            </p>
+            <%= formulario.submit value='Criar Turma', id:"criar_turma", class:'btn btn-primary btn-xl' %>
+            <br><br>
+            <td>
+              <button class="btn btn-primary btn-xl" style="height:40px;width:110px">
+                <%= link_to "Voltar", menu_administrador_path, style:"color:white"%>
+              </button>
+            </td>
+          <%end %>
         </div>
       </div>
     </div>

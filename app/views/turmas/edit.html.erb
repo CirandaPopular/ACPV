@@ -1,0 +1,135 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <h4 class="section-heading mb-4">
+              <span class="section-heading-lower">Adicionar Professores à Turma</span>
+            </h4>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Idade</th>
+                  <th>Telefone</th>
+                  <th>Área de Atuação</th>
+                  <th>Grau de Instrução</th>
+                  <th>Cidade Escolhida</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% Professor.all.each do |professor|
+                  professor = Professor.find(professor.id)
+                  if(professor.inscricao_aprovada == true && professor.disponibilidade_voluntario == 'Sim' && @turma.cidade_turma == professor.cidade_voluntario && (professor.turmas.empty? || !(professor.turmas.include? @turma)))
+                %>
+                  <tr>
+                    <td>
+                      <%= professor.nome %>
+                    </td>
+                    <td>
+                      <%= professor.email %>
+                    </td>
+                    <td>
+                      <%= professor.idade %>
+                    </td>
+                    <td>
+                      <%= professor.telefone %>
+                    </td>
+                    <td>
+                      <%= professor.area_atuacao %>
+                    </td>
+                    <td>
+                      <%= professor.grau_instrucao %>
+                    </td>
+                    <td>
+                      <%= professor.cidade_voluntario %>
+                    </td>
+                    <td>
+                      <button class="btn btn-primary btn-xl" style="height:40px;width:170px">
+                        <%= link_to "Adicionar Professor", adicionar_professor_turma_path(professor.id, @turma.id), id:professor.email, style:"color:white"%>
+                      </button>
+                    </td>
+                  </tr>
+                <% end
+                   end
+                %>
+                </tbody>
+              </table>
+              <br>
+              <h4 class="section-heading mb-4">
+                <span class="section-heading-lower">Adicionar Alunos à Turma</span>
+              </h4>
+              <br>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Gênero</th>
+                    <th>Mov. Social</th>
+                    <th>Área</th>
+                    <th>Escola</th>
+                    <th>Fez Enem?</th>
+                    <th>Endereço</th>
+                    <th>Cor</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% Aluno.all.each do |aluno|
+                    @aluno = Aluno.find(aluno.id)
+                    if(@aluno.inscricao_aprovada == true && (@aluno.turma.nil? || @aluno.turma != @turma)) %>
+                    <tr>
+                      <td>
+                        <%= @aluno.nome %>
+                      </td>
+                      <td>
+                        <%= @aluno.idade %>
+                      </td>
+                      <td>
+                        <%= @aluno.genero %>
+                      </td>
+                      <td>
+                        <%= @aluno.atuacao_mov_social %>
+                      </td>
+                      <td>
+                        <%= @aluno.area %>
+                      </td>
+                      <td>
+                        <%= @aluno.escola %>, <%= @aluno.tipo_escola %>
+                      </td>
+                      <td>
+                        <%= @aluno.fez_enem %>
+                      </td>
+                      <td>
+                        <%= @aluno.rua %>, <%= @aluno.bairro %>, <%= @aluno.cidade %>
+
+                      </td>
+                      <td>
+                        <%= @aluno.cor %>
+                      </td>
+                      <td>
+                        <button class="btn btn-primary btn-xl" style="height:40px;width:170px">
+                          <%= link_to "Adicionar Aluno", adicionar_aluno_turma_path(aluno.id, @turma.id), id:aluno.nome+aluno.idade.to_s+aluno.cor, style:"color:white"%>
+                        </button>
+                      </td>
+                    </tr>
+                  <% end
+                     end%>
+                  </tbody>
+                </table>
+                <br><br>
+                <td>
+                  <button class="btn btn-primary btn-xl" style="height:40px;width:140px">
+                    <%= link_to "Voltar", menu_administrador_path, style:"color:white"%>
+                  </button>
+                </td>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
