@@ -1,13 +1,13 @@
 class Arquivo < ApplicationRecord
   def self.upload_arquivo(arquivo, diretorio)
     FileUtils.mkdir_p(diretorio) unless File.exists?(diretorio)
-    arquivo.each do |arquivo|
-      File.open(File.join(diretorio, arquivo.original_filename), "wb") { |f| f.write(arquivo.read) }
+    arquivo.each do |arq|
+      File.open(File.join(diretorio, arq.original_filename), "wb") { |f| f.write(arq.read) }
     end
   end
 
   def self.download_arquivo(diretorio)
-    Zip::File.open(diretorio+'.zip', Zip::File::CREATE) do |arquivo_zip|
+    Zip::File.open(diretorio+'.zip', Zip::File::CREATE) do
       Dir.chdir diretorio
       #Dir.glob("**/*").reject { |e| File.directory?(e) }.each do |arquivo|
       #  puts "Adicionando #{arquivo}"
