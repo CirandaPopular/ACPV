@@ -1,4 +1,6 @@
 class Arquivo < ApplicationRecord
+  validates :diretorio_arquivo, presence: true
+
   def self.upload_arquivo(arquivo, diretorio)
     FileUtils.mkdir_p(diretorio) unless File.exists?(diretorio)
     arquivo.each do |arq|

@@ -130,6 +130,17 @@ And("O professor com email {string} existe") do |email|
   click_button 'concluir_inscricao'
 end
 
+And("O administrador com email {string} existe") do |email|
+  visit 'administradores/new'
+  fill_in 'administrador[nome]', :with => 'administrador'
+  fill_in 'administrador[email]', :with => email
+  fill_in 'administrador[telefone]', :with => '87999000000'
+  find("option[value=cidade_admin_Garanhuns]").click
+  fill_in 'administrador[password]', :with => 'senha1234'
+  fill_in 'administrador[password_confirmation]', :with => 'senha1234'
+  click_button 'criar_administrador'
+end
+
 Given("Eu nao vejo mais o aluno com nome {string} listado") do |nome|
   expect(page).to have_no_content(nome)
 end
