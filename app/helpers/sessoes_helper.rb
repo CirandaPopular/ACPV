@@ -29,4 +29,9 @@ module SessoesHelper
     session.delete(:usuario_id)
     @usuario_atual = nil
   end
+  def cidade
+    if usuario_atual.cidade_voluntario != 'Ambas'
+      usuario_atual.cidade_voluntario
+    end
+  end
 end

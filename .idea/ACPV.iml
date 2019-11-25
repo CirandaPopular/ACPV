@@ -124,6 +124,7 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.4, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.2.0, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="zip-zip (v0.3, ruby-2.6.4-p104) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

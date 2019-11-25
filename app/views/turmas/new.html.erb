@@ -1,0 +1,79 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-15 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Criação de Turmas</span>
+          </h2>
+          <%= form_with scope: :professor, url: professors_path, local: true do |formulario| %>
+            <% if @turma.errors.any? %>
+              <div id="erro_inscricao">
+                <h2 style="color:red;">
+                  <%= pluralize(@turma.errors.count, "erro") %>:
+                </h2>
+                <ul style="list-style-type: none;">
+                  <% @turma.errors.full_messages.each do |mensagem| %>
+                    <li class="alert alert-danger" role="alert"><%= mensagem %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+          <br>
+          <h4 class="section-heading mb-4">
+            <span class="section-heading-lower">Selecione os Professores da Turma</span>
+          </h4>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Idade</th>
+              <th>Telefone</th>
+              <th>Área de Atuação</th>
+              <th>Grau de Instrução</th>
+              <th>Cidade Aulas</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% Professor.all.each do |professor|
+              professor = Professor.find(professor.id)
+              if(professor.inscricao_aprovada == true && professor.disponibilidade_voluntario == 'Sim' && cidade == professor.cidade_voluntario) %>
+                <tr>
+                  <td>
+                    <%= professor.nome %>
+                  </td>
+                  <td>
+                    <%= professor.email %>
+                  </td>
+                  <td>
+                    <%= professor.idade %>
+                  </td>
+                  <td>
+                    <%= professor.telefone %>
+                  </td>
+                  <td>
+                    <%= professor.area_atuacao %>
+                  </td>
+                  <td>
+                    <%= professor.grau_instrucao %>
+                  </td>
+                  <td>
+                    <%= professor.cidade_voluntario %>
+                  </td>
+                  <td>
+                    <%= link_to "Adicionar à Turma", root_path, id:professor.email%>
+                  </td>
+                </tr>
+              <% end
+              end
+              %>
+            </tbody>
+          </table>
+          <br>
+            <%end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
