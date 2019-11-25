@@ -30,8 +30,6 @@ module SessoesHelper
     @usuario_atual = nil
   end
   def cidade
-    if usuario_atual.cidade_voluntario != 'Ambas'
-      usuario_atual.cidade_voluntario
-    end
+    usuario_atual.cidade_voluntario
   end
 end

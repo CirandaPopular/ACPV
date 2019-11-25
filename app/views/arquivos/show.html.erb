@@ -1,24 +1,32 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Arquivos Anexados</h3>
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Apostilas</span>
+          </h2>
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>Id</th>
+                <th>Data de Envio</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @arquivos.each do |arquivo| %>
+                <tr>
+                  <td><%= arquivo.id %></td>
+                  <td><%= arquivo.created_at %></td>
+                  <td><%= button_to 'Baixar', { action: :download_arquivo, diretorio: arquivo.diretorio_arquivo }, class: 'btn btn-primary' %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="panel-body" style="background-color:white">
-    <table class="table table-hover">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Diretório</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @arquivos.each do |arquivo| %>
-        <tr>
-          <td><%= arquivo.id %></td>
-          <td><%= arquivo.diretorio_arquivo %></td>
-          <td><%= button_to 'Baixar', { action: :download_arquivo, diretorio: arquivo.diretorio_arquivo }, class: 'btn btn-primary' %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+</section>

@@ -1,0 +1,128 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <table class="table table-striped">
+            <% usuario_atual.turmas.each do |turma| %>
+            <tr>
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower"><%= turma.nome %></span>
+              </h2>
+            </tr>
+            <table class="table table-striped">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">Professores</span>
+              </h2>
+              <thead>
+              <tr>
+                <th>Nome Completo</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Área de Atuação</th>
+                <th>Grau de Instrução</th>
+                <th>Cidade a se Voluntariar</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% turma.professors.each do |professor| %>
+                <tr>
+                  <td>
+                    <%= professor.nome %>
+                  </td>
+                  <td>
+                    <%= professor.email %>
+                  </td>
+                  <td>
+                    <%= professor.telefone %>
+                  </td>
+                  <td>
+                    <%= professor.area_atuacao %>
+                  </td>
+                  <td>
+                    <%= professor.grau_instrucao %>
+                  </td>
+                  <td>
+                    <%= professor.cidade_voluntario %>
+                  </td>
+                </tr>
+              <%end%>
+              </tbody>
+            </table>
+            <br>
+            <table class="table table-striped">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">Alunos</span>
+              </h2>
+              <thead>
+              <% turma.alunos.each do |aluno| %>
+                <tr>
+                  <th>Nome Completo</th>
+                  <th>Email</th>
+                  <th>Idade</th>
+                  <th>Telefone</th>
+                  <th>Cor</th>
+                  <th>Gênero</th>
+                  <th>Grau de Instrução</th>
+                  <th>Escola</th>
+                  <th>Tipo de Escola</th>
+                  <th>Nome do Responsável</th>
+                  <th>Contato do Responsável</th>
+                  <th>Área</th>
+                  <th>Atuação em Movimento Social</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    <%= aluno.nome %>
+                  </td>
+                  <td>
+                    <%= aluno.email %>
+                  </td>
+                  <td>
+                    <%= aluno.idade %>
+                  </td>
+                  <td>
+                    <%= aluno.telefone %>
+                  </td>
+                  <td>
+                    <%= aluno.cor %>
+                  </td>
+                  <td>
+                    <%= aluno.genero %>
+                  </td>
+                  <td>
+                    <%= aluno.grau_instrucao %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= aluno.escola %>
+                  </td>
+                  <td>
+                    <%= aluno.tipo_escola %>
+                  </td>
+                  <td>
+                    <%= aluno.nome_responsavel %>
+                  </td>
+                  <td>
+                    <%= aluno.contato_responsavel %>
+                  </td>
+                  <td>
+                    <%= aluno.area %>
+                  </td>
+                  <td>
+                    <%= aluno.atuacao_mov_social %>
+                  </td>
+                </tr>
+                </tbody>
+              <%end%>
+              </table>
+              <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

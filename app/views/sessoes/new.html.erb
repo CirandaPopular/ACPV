@@ -22,9 +22,11 @@
               <%= formulario.submit value='Login', id:"login", class:'btn btn-primary btn-xl' %>
             </p>
             <br>
-            <p>
-              <%= link_to 'Você é um novo administrador do curso? Clique aqui para se cadastrar.', new_administrador_path %>
-            </p>
+            <div align="right" >
+              <button class="btn btn-primary btn-xl" style="height:40px;width:70px">
+                <%= link_to 'Voltar', root_path, style:"color:white" %>
+              </button>
+            </div>
           <% end %>
         </div>
       </div>
