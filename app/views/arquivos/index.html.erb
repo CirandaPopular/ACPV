@@ -1,4 +1,6 @@
-<div class="panel panel-primary" style="background-color: white;">
+<section class="page-section clearfix">
+<div class="container intro-text left-0 text-center bg-faded p-5 rounded">
+<div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Anexar</h3>
   </div>
@@ -15,7 +17,7 @@
   <div class="panel-heading">
     <h3 class="panel-title">Arquivos Anexados</h3>
   </div>
-  <div class="panel-body" style="background-color:white">
+  <div class="panel-body">
     <table class="table table-hover">
       <thead>
       <tr>
@@ -29,9 +31,12 @@
           <td><%= arquivo.id %></td>
           <td><%= arquivo.diretorio_arquivo %></td>
           <td><%= button_to 'Baixar', { action: :download_arquivo, diretorio: arquivo.diretorio_arquivo }, class: 'btn btn-primary' %></td>
+          <td><%= button_to 'Remover', { action: :remover_arquivo, id: arquivo.id }, class: 'btn btn-danger' %></td>
         </tr>
       <% end %>
       </tbody>
     </table>
   </div>
 </div>
+</div>
+</section>

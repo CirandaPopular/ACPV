@@ -7,6 +7,12 @@ class ArquivosController < ApplicationController
     @arquivos = Arquivo.order(id: :desc)
   end
 
+  def remover_arquivo
+    @arquivo = Arquivo.find(params[:id])
+    @arquivo.destroy
+    redirect_to action: :index
+  end
+
   def upload_arquivo
     @arquivo = Arquivo.new
     @arquivo.diretorio_arquivo = "#{add_apostila_path}/arquivos/#{Time.now.strftime("%d%m%Y%H%M%S%6N")}"

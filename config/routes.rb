@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'arquivos/index'
   get 'sessoes/new'
   get 'ciranda_popular/inicio'
   resources :alunos
   resources :professors
   resources :administradores
+  resources :turmas
+  resources :arquivos
   get    'menu_administrador'        => 'ciranda_popular#menu_administrador'
   get    'menu_professor'            => 'ciranda_popular#menu_professor'
   get    'login'                     => 'sessoes#new'
@@ -14,13 +15,15 @@ Rails.application.routes.draw do
   get   'aprovar_inscricao/:id', :to => 'professors#alterar_inscricao', :as => :aprovar_inscricao
   put    'update/:id',           :to => 'professors#update',            :as => :atualizar_professor
   get    'sucesso'                   => 'ciranda_popular#inscricao_finalizada'
+  get    'sem_permissao'             => 'ciranda_popular#sem_permissao'
   get    'selecao_aluno'             => 'alunos#selecao_aluno'
-  get    'aprovar_inscricao_aluno/:id', :to => 'alunos#alterar_inscricao', :as => :alterar_inscricao_aluno
   get    'add_apostila'              => 'arquivos#index'
   get    'visualizar_apostilas'      => 'arquivos#show'
-  # root to: 'arquivos#index'
-  post 'arquivos/upload_arquivo'
-  post 'arquivos/download_arquivo'
+  post   'arquivos/upload_arquivo'
+  post   'arquivos/download_arquivo'
+  post   'arquivos/remover_arquivo'
+  get    'aprovar_inscricao_aluno/:id', :to => 'alunos#alterar_inscricao', :as => :alterar_inscricao_aluno
+
   root   'ciranda_popular#inicio'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
