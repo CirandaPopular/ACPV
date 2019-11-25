@@ -1,5 +1,5 @@
 class AdministradoresController < ApplicationController
-  before_action :autorizar_administrador
+  before_action :autorizar_administrador, except:[:new, :create]
   attr_accessor :eh_administrador
   def show
     @administrador = Administrador.find(params[:id])

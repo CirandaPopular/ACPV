@@ -22,6 +22,10 @@
               <%= formulario.submit value='Login', id:"login", class:'btn btn-primary btn-xl' %>
             </p>
             <br>
+            <% if Administrador.all.size == 0 %>
+              <%= link_to 'Fazer o cadastro do primeiro administrador', new_administrador_path %>
+              <p class="mb-0">Esse link aparece apenas enquanto não há administradores cadastrados</p>
+            <% end %>
             <div align="right" >
               <button class="btn btn-primary btn-xl" style="height:40px;width:70px">
                 <%= link_to 'Voltar', root_path, style:"color:white" %>
