@@ -64,7 +64,7 @@ Given("Eu estou na pagina de selecao de professores") do
 end
 
 When("Eu clico no botao Aprovar o aluno com nome {string}, Idade {string} e Cor {string}") do |nome,idade,cor|
-  click_link "Aprovar"+nome.gsub(" ","")+idade+cor
+  click_link nome+idade+cor
 end
 
 When("Eu clico no botao Aprovar o professor com email {string}") do |email|
@@ -167,4 +167,58 @@ end
 Then("Eu vejo que a escola do aluno de nome {string} foi alterada para {string}") do |nome, escola|
   expect(page).to have_content("Nome completo: "+nome)
   expect(page).to have_content("Escola: "+escola)
+end
+
+And("Eu clico em Criar Nova Turma") do
+  click_link "Criar Nova Turma"
+end
+
+And("Eu preencho o campo nome com {string}") do |nome|
+  fill_in 'turma[nome]', :with => nome
+end
+
+And("Eu seleciono {string} no campo cidade") do |cidade|
+  find("option[value=cidade_turma_" + cidade + "]").click
+end
+
+And("Eu clico no botao Criar Turma") do
+  click_button 'criar_turma'
+end
+
+Then("Eu vejo que a turma foi criada com sucesso") do
+  expect(page).to have_content("Adicionar Professores à Turma")
+end
+
+Then("Eu vejo uma mensagem de erro indicando que a turma nao foi criada") do
+  assert_selector('div#erro_criacao_turma')
+end
+
+And("Eu aprovo a inscricao do professor de e-mail {string}") do |email|
+  visit 'selecao_professor'
+  expect(page).to have_content('Seleção de Professores')
+  click_link email
+  expect(page).to have_no_content(email)
+end
+
+When("Eu clico em adicionar o professor de email {string}") do |email|
+  click_link email
+end
+
+And("Eu aprovo a inscricao do aluno de nome {string}, Idade {string} e cor {string}") do |nome, idade, cor|
+  visit 'selecao_aluno'
+  expect(page).to have_content('Seleção de Alunos')
+  click_link nome+idade+cor
+  expect(page).to have_no_content(nome)
+end
+
+When("Eu clico em adicionar o aluno de nome {string}, Idade {string} e cor {string}") do |nome, idade, cor|
+  click_link nome+idade+cor
+end
+
+When("Eu clico no botao Lista de Turmas") do
+  click_link 'Lista de Turmas'
+end
+
+Then("Eu visualizo a Lista de Turmas") do
+  expect(page).to have_current_path(turmas_path)
 end

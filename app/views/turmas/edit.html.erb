@@ -108,7 +108,7 @@
                         <%= @aluno.cor %>
                       </td>
                       <td>
-                        <%= link_to "Adicionar Aluno", adicionar_aluno_turma_path(aluno.id, @turma.id), id:aluno.email%>
+                        <%= link_to "Adicionar Aluno", adicionar_aluno_turma_path(aluno.id, @turma.id), id:aluno.nome+aluno.idade.to_s+aluno.cor%>
                       </td>
                     </tr>
                   <% end

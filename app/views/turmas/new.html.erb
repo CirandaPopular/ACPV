@@ -9,7 +9,7 @@
           <br>
           <%= form_with scope: :turma, url: turmas_path, local: true do |formulario| %>
             <% if @turma.errors.any? %>
-              <div id="erro_inscricao">
+              <div id="erro_criacao_turma">
                 <h2 style="color:red;">
                   <%= pluralize(@turma.errors.count, "erro") %> :
                 </h2>
