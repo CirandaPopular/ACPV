@@ -22,7 +22,6 @@ class TurmasController < ApplicationController
   def adicionar_professor
     turma = Turma.find(params[:id_turma])
     professor = Professor.find(params[:id])
-    professor.turmas << turma
     turma.professors << professor
     redirect_back(fallback_location: @professor)
   end

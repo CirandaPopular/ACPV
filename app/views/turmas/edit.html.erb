@@ -47,7 +47,9 @@
                       <%= professor.cidade_voluntario %>
                     </td>
                     <td>
-                      <%= link_to "Adicionar Professor", adicionar_professor_turma_path(professor.id, @turma.id), id:professor.email%>
+                      <button class="btn btn-primary btn-xl" style="height:40px;width:170px">
+                        <%= link_to "Adicionar Professor", adicionar_professor_turma_path(professor.id, @turma.id), id:professor.email, style:"color:white"%>
+                      </button>
                     </td>
                   </tr>
                 <% end
@@ -108,13 +110,21 @@
                         <%= @aluno.cor %>
                       </td>
                       <td>
-                        <%= link_to "Adicionar Aluno", adicionar_aluno_turma_path(aluno.id, @turma.id), id:aluno.nome+aluno.idade.to_s+aluno.cor%>
+                        <button class="btn btn-primary btn-xl" style="height:40px;width:170px">
+                          <%= link_to "Adicionar Aluno", adicionar_aluno_turma_path(aluno.id, @turma.id), id:aluno.nome+aluno.idade.to_s+aluno.cor, style:"color:white"%>
+                        </button>
                       </td>
                     </tr>
                   <% end
                      end%>
                   </tbody>
                 </table>
+                <br><br>
+                <td>
+                  <button class="btn btn-primary btn-xl" style="height:40px;width:140px">
+                    <%= link_to "Voltar", menu_administrador_path, style:"color:white"%>
+                  </button>
+                </td>
               </div>
             </div>
           </div>

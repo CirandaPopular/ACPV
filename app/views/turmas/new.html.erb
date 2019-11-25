@@ -29,6 +29,12 @@
               <%= formulario.select :cidade_turma, [%w(Recife cidade_turma_Recife),%w(Garanhuns cidade_turma_Garanhuns)],{},:id=>"cidade_turma" %>
             </p>
             <%= formulario.submit value='Criar Turma', id:"criar_turma", class:'btn btn-primary btn-xl' %>
+            <br><br>
+            <td>
+              <button class="btn btn-primary btn-xl" style="height:40px;width:110px">
+                <%= link_to "Voltar", menu_administrador_path, style:"color:white"%>
+              </button>
+            </td>
           <%end %>
         </div>
       </div>
