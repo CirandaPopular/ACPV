@@ -1,5 +1,5 @@
 class ProfessorsController < ApplicationController
-  before_action :autorizar, except: [:new, :create]
+  before_action :autorizar, except: [:new, :create, :edit]
   attr_accessor :nome, :idade, :eh_administrador
   def show
     @professor = Professor.find(params[:id])

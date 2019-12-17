@@ -1,18 +1,16 @@
 module SessoesHelper
+  @@admin = false
   def login(*)
    session[:usuario_id] = @usuario.id
+   @@admin= @usuario.eh_administrador
   end
   def usuario_atual
-    begin
-      @usuario_atual ||= Administrador.find_by(id: session[:usuario_id])
-      if @usuario_atual.eh_administrador == false
-        @usuario_atual ||= Professor.find_by(id: session[:usuario_id])
-      else
-        @usuario_atual
-      end
-    rescue
+    if @@admin == false
       @usuario_atual ||= Professor.find_by(id: session[:usuario_id])
+    else
+      @usuario_atual ||= Administrador.find_by(id: session[:usuario_id])
     end
+    @usuario_atual
   end
   def bloquear_acesso
     if usuario_atual.present?
