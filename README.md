@@ -1,5 +1,5 @@
 # ACPV
-software para Administração de Curso Pré-Vestibular
+software para Administração de Curso Pré-Vestibular desenvolvido com Ruby on Rails
 
 ### Projeto:
 Sistema SaaS para administração de um curso pré vestibular desenvolvido para a disciplina de Engenharia de Software do curso de Ciência da Computação da UFRPE-UAG com a orientação do professor Rodrigo Cardoso Amaral de Andrade.
